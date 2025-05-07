@@ -1,10 +1,10 @@
 import { ExternalLink } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import SpotlightCard from '@/components/ui/SpotlightCard';
 
 export function ProjectsSection() {
   return (
     <section id="projects" className="scroll-mt-16">
-      <h2 className="text-3xl font-bold mb-8">精选项目</h2>
+      <h2 className="text-3xl font-bold mb-8">个人项目</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
           {
@@ -26,8 +26,8 @@ export function ProjectsSection() {
             image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
           },
         ].map((project) => (
-          <Card key={project.title} className="overflow-hidden group hover:shadow-xl transition-shadow">
-            <div className="aspect-video relative overflow-hidden">
+          <SpotlightCard key={project.title} className="group">
+            <div className="aspect-video relative overflow-hidden rounded-xl mb-4">
               <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
               <img
                 src={project.image}
@@ -36,7 +36,7 @@ export function ProjectsSection() {
                 loading="lazy"
               />
             </div>
-            <div className="p-6">
+            <div>
               <h3 className="text-xl font-semibold mb-2 flex items-center gap-2 group-hover:text-primary transition-colors">
                 {project.title}
                 <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -53,7 +53,7 @@ export function ProjectsSection() {
                 ))}
               </div>
             </div>
-          </Card>
+          </SpotlightCard>
         ))}
       </div>
     </section>

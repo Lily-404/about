@@ -29,12 +29,9 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
         window.requestAnimationFrame(() => {
           setIsScrolling(lastScrollY > 0);
           
-          // 计算滚动进度 (0-1)
-          const maxScroll = 400; // 最大滚动距离
+          const maxScroll = 1000;
           const progress = Math.min(lastScrollY / maxScroll, 1);
-          // 使用缓动函数使动画更平滑
-          const easeProgress = 1 - Math.pow(1 - progress, 3);
-          setScrollProgress(easeProgress);
+          setScrollProgress(progress);
           
           ticking = false;
         });
@@ -46,20 +43,18 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // 计算导航栏宽度，使用缓动函数
-  const navWidth = 80 - (scrollProgress * 20); // 从80%渐变到60%
+  const navWidth = 80 - (scrollProgress * 30);
 
   return (
     <>
       {/* 桌面端导航 */}
       <nav 
         className={cn(
-          "fixed top-4 left-1/2 -translate-x-1/2 z-40 hidden md:block",
-          "transition-all duration-700 ease-out",
+          "fixed top-4 left-1/2 -translate-x-1/2 z-40 hidden md:block rounded-full",
           isScrolling 
             ? theme === 'light'
-              ? "bg-zinc-50/30 backdrop-blur-xl border border-zinc-200/30 rounded-full shadow-lg"
-              : "bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/30 rounded-full shadow-lg"
+              ? "bg-white/80 backdrop-blur-xl border border-zinc-200/50 shadow-lg"
+              : "bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/30 shadow-lg"
             : "bg-transparent"
         )}
         style={{
@@ -67,7 +62,7 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
           transform: `translate(-50%, ${isScrolling ? '0' : '0'})`,
           boxShadow: isScrolling 
             ? theme === 'light'
-              ? '0 4px 30px rgba(0, 0, 0, 0.03)'
+              ? '0 4px 30px rgba(0, 0, 0, 0.08)'
               : '0 4px 30px rgba(0, 0, 0, 0.15)'
             : 'none',
         }}
@@ -105,7 +100,7 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
             variant="ghost" 
             size="icon" 
             onClick={toggleTheme}
-            className="rounded-full hover:bg-zinc-100/50 dark:hover:bg-zinc-800/50 transition-all duration-300 hover:scale-110"
+            className="rounded-full hover:bg-zinc-100/80 dark:hover:bg-zinc-800/50 transition-all duration-300 hover:scale-110"
           >
             {theme === 'light' ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
           </Button>
@@ -114,13 +109,13 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
 
       {/* 移动端导航 */}
       <nav className={cn(
-        "md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[85%]",
+        "md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-[85%]",
         theme === 'light'
-          ? "bg-zinc-50/30 backdrop-blur-xl border border-zinc-200/30 rounded-full shadow-lg"
+          ? "bg-white/80 backdrop-blur-xl border border-zinc-200/50 rounded-full shadow-lg"
           : "bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/30 rounded-full shadow-lg",
         "transition-all duration-700 ease-out"
       )}>
-        <div className="container mx-auto px-6 h-14">
+        <div className="container mx-auto px-4 h-12">
           <div className="flex items-center justify-around h-full">
             {navItems.map(({ id, label, icon: Icon }) => (
               <a
@@ -154,12 +149,12 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
               {theme === 'light' ? (
                 <>
                   <Moon className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
-                  <span className="font-medium text-zinc-600 dark:text-zinc-400">主题</span>
+                  <span className="font-medium text-zinc-600 dark:text-zinc-400">亮</span>
                 </>
               ) : (
                 <>
                   <Sun className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
-                  <span className="font-medium text-zinc-600 dark:text-zinc-400">主题</span>
+                  <span className="font-medium text-zinc-600 dark:text-zinc-400">暗</span>
                 </>
               )}
             </div>
