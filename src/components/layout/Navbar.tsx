@@ -149,12 +149,12 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
               {theme === 'light' ? (
                 <>
                   <Moon className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
-                  <span className="font-medium text-zinc-600 dark:text-zinc-400">亮</span>
+                  <span className="font-medium text-zinc-600 dark:text-zinc-400">暗色</span>
                 </>
               ) : (
                 <>
                   <Sun className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
-                  <span className="font-medium text-zinc-600 dark:text-zinc-400">暗</span>
+                  <span className="font-medium text-zinc-600 dark:text-zinc-400">亮色</span>
                 </>
               )}
             </div>

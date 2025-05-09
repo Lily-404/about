@@ -1,11 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
-import { Globe, Code2, Award, MessageSquare } from 'lucide-react';
+import { Globe, Code2, Award, MessageSquare, BookOpen } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { AboutSection } from '@/components/sections/AboutSection';
 import { ProjectsSection } from '@/components/sections/ProjectsSection';
 import { ContactSection } from '@/components/sections/ContactSection';
+import BlogSection from '@/components/sections/BlogSection';
 import { ThemeProvider, useTheme } from '@/providers/theme-provider';
 import Squares from '@/components/ui/Squares';
 
@@ -58,6 +59,7 @@ function AppContent() {
     { id: 'home', label: '首页', icon: Globe },
     { id: 'about', label: '关于', icon: Code2 },
     { id: 'projects', label: '项目', icon: Award },
+    { id: 'blog', label: '博客', icon: BookOpen },
     { id: 'contact', label: '联系', icon: MessageSquare },
   ];
 
@@ -79,6 +81,9 @@ function AppContent() {
         </div>
         <AboutSection />
         <ProjectsSection />
+        <div id="blog">
+          <BlogSection />
+        </div>
         <ContactSection />
       </main>
 
