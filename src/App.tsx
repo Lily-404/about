@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from 'react';
-import { Globe, Code2, Award, MessageSquare, BookOpen } from 'lucide-react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -9,6 +8,7 @@ import { ContactSection } from '@/components/sections/ContactSection';
 import BlogSection from '@/components/sections/BlogSection';
 import { ThemeProvider, useTheme } from '@/providers/theme-provider';
 import Squares from '@/components/ui/Squares';
+import { navItems } from '@/data/navigation';
 
 function AppContent() {
   const { theme, setTheme } = useTheme();
@@ -54,14 +54,6 @@ function AppContent() {
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
-
-  const navItems = [
-    { id: 'home', label: '首页', icon: Globe },
-    { id: 'about', label: '关于', icon: Code2 },
-    { id: 'projects', label: '项目', icon: Award },
-    { id: 'blog', label: '博客', icon: BookOpen },
-    { id: 'contact', label: '联系', icon: MessageSquare },
-  ];
 
   return (
     <div className="min-h-screen bg-background/50 text-foreground transition-colors duration-300 relative">

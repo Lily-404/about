@@ -82,7 +82,7 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
                 hover:rotate-12
               "
             />
-            <span className="text-xl font-bold dark:text-zinc-200 ">Jimmy</span>
+            {/* <span className="text-xl font-bold dark:text-zinc-200 ">Jimmy</span> */}
           </div>
           <div className="flex items-center space-x-8">
             {navItems.map(({ id, label }) => (

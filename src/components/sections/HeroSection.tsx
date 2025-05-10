@@ -2,6 +2,8 @@ import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ShinyText from '@/components/ui/ShinyText';
 import { useTheme } from '@/providers/theme-provider';
+import { techTags } from '@/data/tech-tags';
+import { heroContent } from '@/data/hero';
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -19,28 +21,29 @@ export function HeroSection() {
               
               {theme === 'dark' ? (
                 <div className="text-5xl sm:text-6xl lg:text-7xl font-bold">
-                  <ShinyText text="Jimmy" disabled={false} speed={3} className='custom-class' />
+                  <ShinyText text={heroContent.title} disabled={false} speed={3} className='custom-class' />
                 </div>
               ) : (
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent animate-in fade-in slide-in-from-bottom-4 duration-700">
-                  Jimmy
+                  {heroContent.title}
                 </h1>
               )}
 
               <p className="text-2xl sm:text-3xl lg:text-4xl text-muted-foreground font-medium animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
-                全栈开发工程师
+                {heroContent.subtitle}
               </p>
             </div>
 
             <p className="text-lg text-muted-foreground/80 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-              专注于打造卓越的数字体验，运用现代网络技术构建可扩展且用户友好的应用程序。
-              拥有丰富的全栈开发经验，致力于创造优秀的用户体验和高性能的技术解决方案。
+              {heroContent.description}
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400">
-              <span className="px-4 py-2 text-sm rounded-full bg-primary/10 text-primary border border-primary/20">React</span>
-              <span className="px-4 py-2 text-sm rounded-full bg-primary/10 text-primary border border-primary/20">TypeScript</span>
-              <span className="px-4 py-2 text-sm rounded-full bg-primary/10 text-primary border border-primary/20">Node.js</span>
+              {techTags.map((tag) => (
+                <span key={tag} className="px-4 py-2 text-sm rounded-full bg-primary/10 text-primary border border-primary/20">
+                  {tag}
+                </span>
+              ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 pt-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">

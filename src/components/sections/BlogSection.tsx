@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -37,6 +37,21 @@ export default function BlogSection() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const cleanMarkdown = (text: string) => {
+    return text
+      .replace(/<[^>]*>/g, '')
+      .replace(/#{1,6}\s/g, '')
+      .replace(/\*\*|\*|__|_/g, '')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/!\[([^\]]*)\]\([^)]+\)/g, '')
+      .replace(/```[\s\S]*?```/g, '')
+      .replace(/`([^`]+)`/g, '$1')
+      .replace(/^[\s-]*[-*+]\s+/gm, '')
+      .replace(/^>\s+/gm, '')
+      .replace(/\n\s*\n/g, '\n')
+      .trim();
+  };
 
   const fetchPosts = async () => {
     try {
@@ -166,7 +181,7 @@ export default function BlogSection() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 line-clamp-3 mb-4">
-                {post.description.replace(/<[^>]*>/g, '')}
+                {cleanMarkdown(post.description)}
               </p>
               {post.categories && post.categories.length > 0 && (
                 <div className="flex flex-wrap gap-2">
