@@ -18,7 +18,7 @@ function AppContent() {
   useEffect(() => {
     const handleScroll = () => {
       // 使用 IntersectionObserver 来检测当前活动部分
-      const sections = ['home', 'about', 'projects', 'contact'];
+      const sections = ['home', 'about', 'projects', 'blog', 'contact'];
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -66,7 +66,7 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-background/50 text-foreground transition-colors duration-300 relative">
       <Squares 
-        speed={0.5} 
+        speed={0.3} 
         squareSize={40}
         direction='diagonal'
         borderColor={theme === 'dark' ? '#fff' : '#000'}

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 
+
 interface NavbarProps {
   theme: 'light' | 'dark';
   toggleTheme: () => void;
@@ -68,7 +69,21 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
         }}
       >
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="text-xl font-bold">Jimmy</span>
+          <div className="flex items-center gap-3">
+            <img
+              src="./avatar.png"
+              alt="logo"
+              className="
+                h-9 w-9 rounded-lg shadow-lg
+                transition-all duration-300
+                hover:scale-110 hover:shadow-[0_0_16px_4px_rgba(255,255,255,0.5)]
+                ring-2 ring-gray-300/60
+                bg-gradient-to-br from-white/10 to-yellow-100/10
+                hover:rotate-12
+              "
+            />
+            <span className="text-xl font-bold dark:text-zinc-200 ">Jimmy</span>
+          </div>
           <div className="flex items-center space-x-8">
             {navItems.map(({ id, label }) => (
               <a
@@ -76,7 +91,9 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
                 href={`#${id}`}
                 className={cn(
                   'text-sm font-medium transition-all duration-300 relative group',
-                  activeSection === id ? 'text-zinc-900 dark:text-zinc-100' : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
+                  activeSection === id 
+                    ? 'text-zinc-900 dark:text-zinc-100 dark:drop-shadow-[0_0_8px_#e5e7eb]'
+                    : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
                 )}
                 onClick={(e) => {
                   e.preventDefault();
@@ -124,7 +141,7 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
                 className={cn(
                   'flex flex-col items-center justify-center gap-0.5 text-[10px] transition-all duration-300',
                   activeSection === id 
-                    ? 'text-zinc-900 dark:text-zinc-100' 
+                    ? 'text-zinc-900 dark:text-zinc-100 dark:drop-shadow-[0_0_8px_#e5e7eb]'
                     : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
                 )}
                 onClick={(e) => {

@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Calendar, Tag, RefreshCw } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
+import { XMLParser } from 'fast-xml-parser';
 
 interface BlogPost {
   title: string;
@@ -12,6 +13,24 @@ interface BlogPost {
   description: string;
   thumbnail?: string;
   categories?: string[];
+}
+
+interface RSSItem {
+  title: string;
+  link: string;
+  pubDate: string;
+  description: string;
+  category: string | string[];
+}
+
+interface RSSChannel {
+  item: RSSItem[];
+}
+
+interface RSSFeed {
+  rss: {
+    channel: RSSChannel;
+  };
 }
 
 export default function BlogSection() {
@@ -23,20 +42,32 @@ export default function BlogSection() {
     try {
       setError(null);
       setLoading(true);
-      const response = await axios.get(
-        'https://api.rss2json.com/v1/api.json?rss_url=https://www.jimmy-blog.top/rss.xml'
-      );
-      if (response.data.status === 'ok') {
-        const fixedPosts = response.data.items
-          .slice(0, 9)  
-          .map((post: BlogPost) => ({
-            ...post,
-            link: post.link.replace('jimmy-blog.vercel.app', 'www.jimmy-blog.top')
-          }));
-        setPosts(fixedPosts);
-      } else {
-        setError('获取博客文章失败');
-      }
+      const response = await axios.get('https://www.jimmy-blog.top/rss.xml', {
+        responseType: 'text'
+      });
+      
+      const parser = new XMLParser({
+        ignoreAttributes: false,
+        attributeNamePrefix: "@_"
+      });
+      
+      const result = parser.parse(response.data) as RSSFeed;
+      const items = result.rss.channel.item;
+      
+      const fixedPosts = items
+        .slice(0, 9)
+        .map((item: RSSItem) => ({
+          title: item.title,
+          link: item.link.replace('jimmy-blog.vercel.app', 'www.jimmy-blog.top'),
+          pubDate: item.pubDate,
+          description: item.description,
+          categories: Array.isArray(item.category) ? item.category : [item.category]
+        }))
+        .sort((a: BlogPost, b: BlogPost) => 
+          new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+        );
+      
+      setPosts(fixedPosts);
     } catch (error) {
       console.error('Error fetching blog posts:', error);
       setError('获取博客文章失败，请稍后重试');
@@ -139,7 +170,7 @@ export default function BlogSection() {
               </p>
               {post.categories && post.categories.length > 0 && (
                 <div className="flex flex-wrap gap-2">
-                  {post.categories.slice(0, 3).map((category, idx) => (
+                  {post.categories.map((category, idx) => (
                     <Badge key={idx} variant="secondary" className="flex items-center gap-1">
                       <Tag className="h-3 w-3" />
                       {category}
