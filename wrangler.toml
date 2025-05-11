@@ -1,0 +1,9 @@
+name = "your-app-name"
+compatibility_date = "2024-03-21"
+
+[site]
+bucket = "./dist"
+entry-point = "."
+
+[build]
+command = "npm run build" 
