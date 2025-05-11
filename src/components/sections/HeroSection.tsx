@@ -71,9 +71,6 @@ export function HeroSection() {
                 <a href="https://github.com/Lily-404" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                   <Github className="h-6 w-6" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Linkedin className="h-6 w-6" />
-                </a>
                 <a href="mailto:sxy1308075897@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                   <Mail className="h-6 w-6" />
                 </a>

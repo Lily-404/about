@@ -34,39 +34,34 @@ function AppContent() {
       document.head.appendChild(script2);
     }
 
-    const handleScroll = () => {
-      // 使用 IntersectionObserver 来检测当前活动部分
-      const sections = ['home', 'about', 'projects', 'blog', 'contact'];
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(entry.target.id);
-            }
-          });
-        },
-        { threshold: 0.6 }
-      );
+    // 使用 IntersectionObserver 来检测当前活动部分
+    const sections = ['home', 'about', 'projects', 'blog', 'contact'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
 
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
       sections.forEach((section) => {
         const element = document.getElementById(section);
         if (element) {
-          observer.observe(element);
+          observer.unobserve(element);
         }
       });
-
-      return () => {
-        sections.forEach((section) => {
-          const element = document.getElementById(section);
-          if (element) {
-            observer.unobserve(element);
-          }
-        });
-      };
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -83,7 +78,13 @@ function AppContent() {
         hoverFillColor={theme === 'dark' ? '#222' : '#eee'}
       />
       
-      <Navbar theme={theme} toggleTheme={toggleTheme} activeSection={activeSection} navItems={navItems} />
+      <Navbar 
+        theme={theme} 
+        toggleTheme={toggleTheme} 
+        activeSection={activeSection} 
+        navItems={navItems} 
+        setActiveSection={setActiveSection}
+      />
 
       <main ref={mainRef} className="container mx-auto px-4 pt-8 md:pt-24 pb-16 space-y-32 relative z-10">
         <div className="relative min-h-[80vh] w-full">

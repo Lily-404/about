@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail,  Globe } from 'lucide-react';
+import { Github, Mail,  Globe } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 export interface SocialLink {
@@ -14,11 +14,6 @@ export const socialLinks: SocialLink[] = [
     label: 'GitHub',
   },
   {
-    icon: Linkedin,
-    href: 'https://linkedin.com/in/yourusername',
-    label: 'LinkedIn',
-  },
-  {
     icon: Mail,
     href: 'mailto:sxy1308075897@gmail.com',
     label: 'Email',
@@ -28,4 +23,5 @@ export const socialLinks: SocialLink[] = [
     href: 'https://www.jimmy-blog.top/',
     label: 'Website',
   },
+  
 ]; 

@@ -13,9 +13,10 @@ interface NavbarProps {
     label: string;
     icon: React.ComponentType<{ className?: string }>;
   }>;
+  setActiveSection: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarProps) {
+export function Navbar({ theme, toggleTheme, activeSection, navItems, setActiveSection }: NavbarProps) {
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -146,6 +147,7 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems }: NavbarPr
                 )}
                 onClick={(e) => {
                   e.preventDefault();
+                  setActiveSection(id);
                   document.getElementById(id)?.scrollIntoView({ 
                     behavior: 'smooth',
                     block: 'start'

@@ -26,14 +26,14 @@ export const projects: Project[] = [
     description: '资源网站项目，采用拟物化交互体验',
     tech: ['Typescript', 'React', 'vite','Supabase'],
     image: '../project3.png',
-    link: 'https://github.com/Lily-404/BrowseBase',
+    link: 'https://browsebase.pages.dev',
   },
   {
     title: 'NextForge',
     description: '个人落地页快速生成（填写信息->生成next.js项目->直接打包部署)',
     tech: [' Next.js', 'Tailwind CSS', 'Radix UI'],
     image: '../project4.png',
-    link: 'https://github.com/Lily-404/NextForge',
+    link: 'https://next-forge-eta-henna.vercel.app/',
   },
   {
     title: '灰烬',
