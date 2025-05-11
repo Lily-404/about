@@ -23,7 +23,7 @@ export const projects: Project[] = [
   },
   {
     title: 'BrowseBase',
-    description: '资源网站项目，采用了现代化的UI设计和交互体验。',
+    description: '资源网站项目，采用拟物化交互体验。',
     tech: ['Typescript', 'React', 'vite','Supabase'],
     image: '../project3.png',
     link: 'https://github.com/yourusername/browsebase',

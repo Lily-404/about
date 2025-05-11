@@ -16,6 +16,24 @@ function AppContent() {
   const mainRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Google Analytics 初始化
+    const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+    if (gaId) {
+      const script1 = document.createElement('script');
+      script1.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+      script1.async = true;
+      document.head.appendChild(script1);
+
+      const script2 = document.createElement('script');
+      script2.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${gaId}');
+      `;
+      document.head.appendChild(script2);
+    }
+
     const handleScroll = () => {
       // 使用 IntersectionObserver 来检测当前活动部分
       const sections = ['home', 'about', 'projects', 'blog', 'contact'];
