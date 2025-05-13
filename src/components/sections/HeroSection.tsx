@@ -96,7 +96,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute -bottom-8 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <ChevronDown className="h-6 w-6 text-muted-foreground" />
       </div>
     </section>

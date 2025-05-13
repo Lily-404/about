@@ -3,6 +3,7 @@ import { Separator } from '@/components/ui/separator';
 import { socialLinks } from '@/data/social';
 import { Button } from '@/components/ui/button';
 import { contactContent } from '@/data/contact';
+import { WechatPopover } from '@/components/ui/wechat-popover';
 
 export function ContactSection() {
   return (
@@ -45,7 +46,8 @@ export function ContactSection() {
               </p>
               <Separator />
               <div className="flex flex-wrap gap-4">
-                {socialLinks.filter(link => link.label !== 'Email' && link.label !== 'Website').map((link) => {
+                <WechatPopover />
+                {socialLinks.filter(link => link.label !== 'Email' && link.label !== 'Website' && link.label !== 'WeChat').map((link) => {
                   const Icon = link.icon;
                   return (
                     <a

@@ -1,4 +1,4 @@
-import { Github, Mail,  Globe } from 'lucide-react';
+import { Github, Mail, Globe } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 export interface SocialLink {
@@ -23,5 +23,4 @@ export const socialLinks: SocialLink[] = [
     href: 'https://www.jimmy-blog.top/',
     label: 'Website',
   },
-  
 ]; 
