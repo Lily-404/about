@@ -1,29 +1,19 @@
 import { ExternalLink } from 'lucide-react';
 import SpotlightCard from '@/components/ui/SpotlightCard';
 import { projects } from '@/data/projects';
-import { Button } from '@/components/ui/button';
-import { logEvent, EventCategories, EventActions } from '@/lib/analytics';
 
 export function ProjectsSection() {
-  const handleProjectClick = (projectName: string, projectLink: string) => {
-    logEvent(
-      EventCategories.PROJECTS,
-      EventActions.CLICK,
-      projectName
-    );
-    window.location.href = projectLink;
-  };
-
   return (
     <section id="projects" className="scroll-mt-16">
       <h2 className="text-3xl font-bold mb-8">个人作品</h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
-          <Button
+          <a
             key={project.title}
-            variant="ghost"
-            className="block p-0 h-auto hover:bg-transparent"
-            onClick={() => handleProjectClick(project.title, project.link)}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
           >
             <SpotlightCard className="group h-full">
               <div className="aspect-video relative overflow-hidden rounded-xl mb-4 bg-gradient-to-br from-background/50 to-background/80 shadow-lg ring-1 ring-border/20 hover:ring-primary/30 transition-all duration-300">
@@ -53,7 +43,7 @@ export function ProjectsSection() {
                 </div>
               </div>
             </SpotlightCard>
-          </Button>
+          </a>
         ))}
       </div>
     </section>
