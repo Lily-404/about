@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { contactContent } from '@/data/contact';
 import { WechatPopover } from '@/components/ui/wechat-popover';
 import { logEvent, EventCategories, EventActions } from '@/lib/analytics';
+import { MessageCircle } from 'lucide-react';
 
 export function ContactSection() {
   const handleSocialClick = (platform: string, url: string) => {
@@ -36,7 +37,7 @@ export function ContactSection() {
         
         <div className="grid md:grid-cols-2 gap-8">
           <Card className="p-8 hover:shadow-lg transition-shadow">
-            <div className="space-y-6">
+            <form onSubmit={handleFormSubmit} className="space-y-6">
               <h3 className="text-2xl font-semibold">{contactContent.cards.cooperation.title}</h3>
               <p className="text-muted-foreground">
                 {contactContent.cards.cooperation.description}
@@ -59,7 +60,7 @@ export function ContactSection() {
                   );
                 })}
               </div>
-            </div>
+            </form>
           </Card>
 
           <Card className="p-8 hover:shadow-lg transition-shadow">
@@ -70,7 +71,16 @@ export function ContactSection() {
               </p>
               <Separator />
               <div className="flex flex-wrap gap-4">
-                <WechatPopover />
+                <WechatPopover>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="hover:scale-110 transition-transform hover:bg-primary hover:text-primary-foreground"
+                    aria-label="WeChat"
+                  >
+                    <MessageCircle className="h-5 w-5" />
+                  </Button>
+                </WechatPopover>
                 {socialLinks.filter(link => link.label !== 'Email' && link.label !== 'Website' && link.label !== 'WeChat').map((link) => {
                   const Icon = link.icon;
                   return (

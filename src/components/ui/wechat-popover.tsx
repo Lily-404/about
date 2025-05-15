@@ -8,7 +8,11 @@ import {
 import { MessageCircle, Copy, Check } from 'lucide-react';
 import { logEvent, EventCategories, EventActions } from '@/lib/analytics';
 
-export function WechatPopover() {
+interface WechatPopoverProps {
+  children?: React.ReactNode;
+}
+
+export function WechatPopover({ children }: WechatPopoverProps) {
   const [copied, setCopied] = useState(false);
   const wechatId = 'OOIll0';
 
@@ -33,15 +37,16 @@ export function WechatPopover() {
 
   return (
     <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          className="w-full justify-start"
-          onClick={handleQRView}
-        >
-          <MessageCircle className="mr-2 h-4 w-4" />
-          WeChat
-        </Button>
+      <PopoverTrigger asChild onClick={handleQRView}>
+        {children || (
+          <Button
+            variant="outline"
+            className="w-full justify-start"
+          >
+            <MessageCircle className="mr-2 h-4 w-4" />
+            WeChat
+          </Button>
+        )}
       </PopoverTrigger>
       <PopoverContent className="w-80">
         <div className="space-y-4">
