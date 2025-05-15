@@ -1,4 +1,4 @@
-import { ChevronDown, Github, Mail } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ShinyText from '@/components/ui/ShinyText';
 import { useTheme } from '@/providers/theme-provider';
@@ -65,15 +65,6 @@ export function HeroSection() {
                   <span className="relative z-10">查看项目</span>
                   <div className="absolute inset-0 bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                 </Button>
-              </div>
-              
-              <div className="flex gap-6 items-center">
-                <a href="https://github.com/Lily-404" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Github className="h-6 w-6" />
-                </a>
-                <a href="mailto:sxy1308075897@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Mail className="h-6 w-6" />
-                </a>
               </div>
             </div>
           </div>

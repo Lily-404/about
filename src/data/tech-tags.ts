@@ -1,5 +1,6 @@
 export const techTags = [
   'React',
-  'Go',
-  'Next.js',
+  'Vite',
+  'Typescript',
+  'TailwindCSS',
 ]; 
