@@ -2,7 +2,7 @@ import { Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
-
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 interface NavbarProps {
   theme: 'light' | 'dark';
@@ -71,19 +71,23 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems, setActiveS
       >
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img
-              src="./avatar.png"
-              alt="logo"
-              className="
-                h-9 w-9 rounded-lg shadow-lg
-                transition-all duration-300
-                hover:scale-110 hover:shadow-[0_0_16px_4px_rgba(255,255,255,0.5)]
-                ring-2 ring-gray-300/60
-                bg-gradient-to-br from-white/10 to-yellow-100/10
-                hover:rotate-12
-              "
-            />
-            {/* <span className="text-xl font-bold dark:text-zinc-200 ">Jimmy</span> */}
+            <div className="relative h-9 w-9">
+              <OptimizedImage
+                src="./avatar.png"
+                alt="logo"
+                width={36}
+                height={36}
+                priority
+                className="
+                  h-9 w-9 rounded-lg shadow-lg
+                  transition-all duration-300
+                  hover:scale-110 hover:shadow-[0_0_16px_4px_rgba(255,255,255,0.5)]
+                  ring-2 ring-gray-300/60
+                  bg-gradient-to-br from-white/10 to-yellow-100/10
+                  hover:rotate-12
+                "
+              />
+            </div>
           </div>
           <div className="flex items-center space-x-8">
             {navItems.map(({ id, label }) => (

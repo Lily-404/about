@@ -7,6 +7,7 @@ import {
 } from '@/components/ui/popover';
 import { MessageCircle, Copy, Check } from 'lucide-react';
 import { logEvent, EventCategories, EventActions } from '@/lib/analytics';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 interface WechatPopoverProps {
   children?: React.ReactNode;
@@ -48,29 +49,37 @@ export function WechatPopover({ children }: WechatPopoverProps) {
           </Button>
         )}
       </PopoverTrigger>
-      <PopoverContent className="w-80">
+      <PopoverContent 
+        className="w-80" 
+        side="right"
+        align="center"
+        sideOffset={5}
+      >
         <div className="space-y-4">
           <div className="flex justify-center">
-            <img
+            <OptimizedImage
               src="/wechat-qr.jpg"
               alt="WeChat QR Code"
+              width={192}
+              height={192}
               className="w-48 h-48 object-cover rounded-lg"
+              priority
             />
           </div>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">WeChat ID:</span>
-            <div className="flex items-center gap-2">
+          <div className="flex justify-center items-center gap-2">
+            <span className="text-sm text-muted-foreground whitespace-nowrap">WeChat ID:</span>
+            <div className="flex items-center gap-1">
               <code className="text-sm">{wechatId}</code>
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-8 w-8"
+                className="h-6 w-6"
                 onClick={handleCopy}
               >
                 {copied ? (
-                  <Check className="h-4 w-4 text-green-500" />
+                  <Check className="h-3 w-3 text-green-500" />
                 ) : (
-                  <Copy className="h-4 w-4" />
+                  <Copy className="h-3 w-3" />
                 )}
               </Button>
             </div>
