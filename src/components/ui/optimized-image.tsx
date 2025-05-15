@@ -21,9 +21,8 @@ export function OptimizedImage({
 }: OptimizedImageProps) {
   const [isLoading, setIsLoading] = useState(true);
 
-  // 如果是外部图片，使用 Vercel 的图片优化服务
-  const isExternalImage = src.startsWith('http');
-  const imageUrl = isExternalImage
+  // 使用 Vercel 的图片优化服务
+  const imageUrl = src.startsWith('http')
     ? `https://vercel-proxy.maikesi.vercel.app/api/image?url=${encodeURIComponent(src)}&width=${width || 800}`
     : src;
 
