@@ -9,6 +9,7 @@ import BlogSection from '@/components/sections/BlogSection';
 import { ThemeProvider, useTheme } from '@/providers/theme-provider';
 import Squares from '@/components/ui/Squares';
 import { navItems } from '@/data/navigation';
+import ReactGA from 'react-ga4';
 
 function AppContent() {
   const { theme, setTheme } = useTheme();
@@ -16,22 +17,12 @@ function AppContent() {
   const mainRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // Google Analytics 初始化
+    // 初始化 Google Analytics
     const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
     if (gaId) {
-      const script1 = document.createElement('script');
-      script1.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
-      script1.async = true;
-      document.head.appendChild(script1);
-
-      const script2 = document.createElement('script');
-      script2.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${gaId}');
-      `;
-      document.head.appendChild(script2);
+      ReactGA.initialize(gaId);
+      // 发送页面浏览事件
+      ReactGA.send({ hitType: "pageview", page: window.location.pathname });
     }
 
     // 使用 IntersectionObserver 来检测当前活动部分
@@ -41,6 +32,12 @@ function AppContent() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
+            // 记录页面浏览事件
+            ReactGA.send({ 
+              hitType: "pageview", 
+              page: `/${entry.target.id}`,
+              title: entry.target.id.charAt(0).toUpperCase() + entry.target.id.slice(1)
+            });
           }
         });
       },
@@ -66,6 +63,12 @@ function AppContent() {
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
+    // 记录主题切换事件
+    ReactGA.event({
+      category: 'Theme',
+      action: 'Toggle',
+      label: theme === 'light' ? 'Dark' : 'Light'
+    });
   };
 
   return (
