@@ -74,7 +74,7 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-background/50 text-foreground transition-colors duration-300 relative">
       <Squares 
-        speed={0.3} 
+        speed={0.2} 
         squareSize={40}
         direction='diagonal'
         borderColor={theme === 'dark' ? '#fff' : '#000'}

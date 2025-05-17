@@ -4,6 +4,7 @@ import ShinyText from '@/components/ui/ShinyText';
 import { useTheme } from '@/providers/theme-provider';
 import { techTags } from '@/data/tech-tags';
 import { heroContent } from '@/data/hero';
+import { OptimizedImage } from '@/components/ui/optimized-image';
 
 export function HeroSection() {
   const { theme } = useTheme();
@@ -74,9 +75,12 @@ export function HeroSection() {
             <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 animate-pulse"></div>
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/10 to-transparent"></div>
-              <img 
+              <OptimizedImage 
                 src="/avatar.jpg" 
                 alt="Jimmy" 
+                width={320}
+                height={320}
+                priority={true}
                 className="w-full h-full object-cover rounded-2xl border-4 border-background shadow-2xl"
               />
               <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-2xl bg-primary/10 backdrop-blur-sm flex items-center justify-center border border-primary/20">
