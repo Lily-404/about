@@ -38,12 +38,12 @@ export function ProjectsSection() {
                   priority={projects.indexOf(project) < 3}
                 />
               </div>
-              <div className="px-1">
+              <div className="px-4 text-left">
                 <h3 className="text-xl font-semibold mb-2 flex items-center gap-2 group-hover:text-primary transition-colors">
                   {project.title}
                   <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </h3>
-                <p className="text-muted-foreground mb-4 text-sm md:text-base">{project.description}</p>
+                <p className="text-muted-foreground mb-4 text-sm md:text-base text-left">{project.description}</p>
                 <div className="flex gap-2 flex-wrap">
                   {project.tech.map((tech) => (
                     <span
