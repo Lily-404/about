@@ -21,11 +21,12 @@ export const projects: Project[] = [
     image: '../project2.png',
     link: 'https://github.com/Lily-404/todo',
   },
+
   {
     title: 'BrowseBase',
     description: '拟物化资源网站',
     tech: ['Typescript', 'React', 'vite','Supabase'],
-    image: '../project3.png',
+    image: 'project3.png',
     link: 'https://browsebase.pages.dev',
   },
   {
@@ -34,6 +35,13 @@ export const projects: Project[] = [
     tech: [' Next.js', 'Tailwind CSS', 'Radix UI'],
     image: '../project4.png',
     link: 'https://next-forge-eta-henna.vercel.app/',
+  },
+  {
+    title: 'GO Search',
+    description: '终端快速搜索',
+    tech: ['Go', 'Cobra', 'CLI'],
+    image: '../project1.png',
+    link: 'https://github.com/Lily-404/search',
   },
   {
     title: '灰烬',
