@@ -41,7 +41,10 @@ function AppContent() {
           }
         });
       },
-      { threshold: 0.6 }
+      { 
+        threshold: 0.3,
+        rootMargin: '-20% 0px -20% 0px'
+      }
     );
 
     sections.forEach((section) => {
@@ -89,7 +92,7 @@ function AppContent() {
         setActiveSection={setActiveSection}
       />
 
-      <main ref={mainRef} className="container mx-auto px-4 pt-8 md:pt-24 pb-16 space-y-32 relative z-10">
+      <main ref={mainRef} className="container mx-auto px-4 pt-8 md:pt-24 pb-8 md:pb-4 space-y-16 md:space-y-24 relative z-10">
         <div className="relative min-h-[80vh] w-full">
           <HeroSection />
         </div>
@@ -101,7 +104,9 @@ function AppContent() {
         <ContactSection />
       </main>
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   );
 }
