@@ -160,9 +160,9 @@ export default function BlogSection() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post, index) => (
-          <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          <Card key={index} className="hover:shadow-md transition-all duration-300">
             <CardHeader>
-              <CardTitle className="line-clamp-2 text-xl">
+              <CardTitle className="truncate text-xl">
                 <a 
                   href={post.link} 
                   target="_blank" 
