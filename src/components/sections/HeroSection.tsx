@@ -1,4 +1,4 @@
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ShinyText from '@/components/ui/ShinyText';
 import { useTheme } from '@/providers/theme-provider';
@@ -76,16 +76,22 @@ export function HeroSection() {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 animate-pulse"></div>
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/10 to-transparent"></div>
               <OptimizedImage 
-                src="/avatar.jpg" 
+                src="/avatar1.png" 
                 alt="Jimmy" 
                 width={320}
                 height={320}
                 priority={true}
                 className="w-full h-full object-cover rounded-2xl border-4 border-background shadow-2xl"
               />
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-2xl bg-primary/10 backdrop-blur-sm flex items-center justify-center border border-primary/20">
-                <span className="text-3xl">👋</span>
-              </div>
+              {theme === 'dark' ? (
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-2xl bg-primary/10 backdrop-blur-sm flex items-center justify-center border border-primary/20 shadow-lg">
+                  <Code2 className="h-8 w-8 text-primary" />
+                </div>
+              ) : (
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-2xl bg-primary/10 backdrop-blur-sm flex items-center justify-center border border-primary/20 shadow-lg">
+                  <span className="text-4xl">😴</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
