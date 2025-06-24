@@ -34,7 +34,7 @@ export function ProjectsSection() {
                   alt={project.title}
                   width={800}
                   height={450}
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover w-full h-full transition-transform duration-300"
                   priority={projects.indexOf(project) < 3}
                 />
               </div>

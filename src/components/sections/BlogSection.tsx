@@ -162,7 +162,7 @@ export default function BlogSection() {
         {posts.map((post, index) => (
           <Card key={index} className="hover:shadow-md transition-all duration-300">
             <CardHeader>
-              <CardTitle className="truncate text-xl">
+              <CardTitle className="text-xl md:truncate">
                 <a 
                   href={post.link} 
                   target="_blank" 
