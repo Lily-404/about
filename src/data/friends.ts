@@ -8,6 +8,12 @@ export interface Friend {
 
 export const friends: Friend[] = [
   {
+    name: "Oscar Hernandez",
+    url: "https://oscarhernandez.vercel.app/",
+    description: "一位哥伦比亚的前端开发者",
+    avatar: "/friend4.jpeg"
+  },
+  {
     name: "liruifengv",
     url: "https://liruifengv.com/",
     description: "Web 开发者，Astro 项目成员，开源爱好者。",
@@ -24,7 +30,8 @@ export const friends: Friend[] = [
     url: "https://leetao.me/",
     description: "后端工程师，写有趣的代码，做有趣的事",
     avatar: "/friend3.jpg"
-  }
+  },
+  
 
 
 ]; 
