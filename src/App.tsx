@@ -6,13 +6,12 @@ import { AboutSection } from '@/components/sections/AboutSection';
 import { ProjectsSection } from '@/components/sections/ProjectsSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import BlogSection from '@/components/sections/BlogSection';
-import { ThemeProvider, useTheme } from '@/providers/theme-provider';
+import { ThemeProvider } from '@/providers/theme-provider';
 import Prism from '@/components/ui/Prism';
 import { navItems } from '@/data/navigation';
 import ReactGA from 'react-ga4';
 
 function AppContent() {
-  const { theme, setTheme } = useTheme();
   const [activeSection, setActiveSection] = useState('home');
   const mainRef = useRef<HTMLElement>(null);
 
@@ -64,16 +63,6 @@ function AppContent() {
     };
   }, []);
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-    // 记录主题切换事件
-    ReactGA.event({
-      category: 'Theme',
-      action: 'Toggle',
-      label: theme === 'light' ? 'Dark' : 'Light'
-    });
-  };
-
   return (
     <div className="min-h-screen bg-background/50 text-foreground transition-colors duration-300 relative">
 
@@ -92,8 +81,6 @@ function AppContent() {
       </div>
 
       <Navbar
-        theme={theme}
-        toggleTheme={toggleTheme}
         activeSection={activeSection}
         navItems={navItems}
         setActiveSection={setActiveSection}

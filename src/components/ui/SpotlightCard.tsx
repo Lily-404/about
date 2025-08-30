@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { useTheme } from "@/providers/theme-provider";
 import { cn } from "@/lib/utils";
 
 interface Position {
@@ -19,15 +18,12 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
   spotlightColor,
   variant = 'default'
 }) => {
-  const { theme } = useTheme();
   const divRef = useRef<HTMLDivElement>(null);
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState<number>(0);
 
-  const defaultSpotlightColor = theme === 'dark' 
-    ? "rgba(255, 255, 255, 0.25)"
-    : "rgba(0, 0, 0, 0.1)";
+  const defaultSpotlightColor = "rgba(255, 255, 255, 0.25)";
 
   const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
     if (!divRef.current || isFocused) return;
@@ -36,23 +32,10 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
     setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  const handleFocus = () => {
-    setIsFocused(true);
-    setOpacity(0.6);
-  };
-
-  const handleBlur = () => {
-    setIsFocused(false);
-    setOpacity(0);
-  };
-
-  const handleMouseEnter = () => {
-    setOpacity(0.6);
-  };
-
-  const handleMouseLeave = () => {
-    setOpacity(0);
-  };
+  const handleFocus = () => { setIsFocused(true); setOpacity(0.6); };
+  const handleBlur = () => { setIsFocused(false); setOpacity(0); };
+  const handleMouseEnter = () => { setOpacity(0.6); };
+  const handleMouseLeave = () => { setOpacity(0); };
 
   return (
     <div
@@ -66,8 +49,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
         "relative border overflow-hidden",
         variant === 'frosted'
           ? 'rounded-xl p-4 bg-card/50 backdrop-blur-xl'
-          : 'rounded-3xl p-8',
-        variant === 'default' && (theme === 'dark' ? 'border-neutral-800 bg-neutral-900' : 'border-neutral-200 bg-white'),
+          : 'rounded-3xl p-8 border-neutral-800 bg-neutral-900',
         className
       )}
     >
