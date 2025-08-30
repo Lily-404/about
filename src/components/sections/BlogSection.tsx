@@ -160,8 +160,8 @@ export default function BlogSection() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post, index) => (
-          <Card key={index} className="hover:shadow-md transition-all duration-300">
-            <CardHeader>
+          <Card key={index} className="hover:shadow-md transition-all duration-300 bg-card/50 backdrop-blur-xl">
+            <CardHeader className="pb-2">
               <CardTitle className="text-xl md:truncate">
                 <a 
                   href={post.link} 
@@ -173,23 +173,20 @@ export default function BlogSection() {
                 </a>
               </CardTitle>
               <div className="flex items-center gap-4 text-sm text-muted-foreground mt-2">
-                <div className="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
-                  <span>{formatDate(post.pubDate)}</span>
-                </div>
+                <span>{formatDate(post.pubDate)}</span>
               </div>
             </CardHeader>
-            <CardContent>
-              <p className="text-gray-600 line-clamp-3 mb-4">
+            <CardContent className="pb-4">
+              <p className="text-muted-foreground line-clamp-3 mb-2">
                 {cleanMarkdown(post.description)}
               </p>
               {post.categories && post.categories.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {post.categories.map((category, idx) => (
-                    <Badge key={idx} variant="secondary" className="flex items-center gap-1">
+                    <span key={idx} className="border border-input bg-card/60 px-2 py-1 rounded-md text-xs hover:bg-white/10 hover:text-accent-foreground transition-colors duration-300 flex items-center gap-1">
                       <Tag className="h-3 w-3" />
                       {category}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
               )}
@@ -224,4 +221,4 @@ export default function BlogSection() {
       </div>
     </section>
   );
-} 
+}

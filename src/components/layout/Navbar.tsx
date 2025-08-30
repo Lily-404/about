@@ -45,7 +45,7 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems, setActiveS
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navWidth = 80 - (scrollProgress * 30);
+  const navWidth = 62 - (scrollProgress * 10);
 
   return (
     <>

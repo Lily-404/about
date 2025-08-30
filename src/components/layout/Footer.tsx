@@ -9,7 +9,7 @@ export function Footer() {
 
   return (
     <footer className="border-t">
-      <div className="container mx-auto px-4 h-12 md:h-12 flex items-center justify-between text-sm text-muted-foreground mb-16 md:mb-0">
+      <div className="container max-w-6xl mx-auto px-4 h-12 md:h-12 flex items-center justify-between text-sm text-muted-foreground mb-16 md:mb-0">
         <span>© 2025 Designed By Jimmy</span>
         <div className="flex items-center gap-4">
           <Separator orientation="vertical" className="h-4" />
