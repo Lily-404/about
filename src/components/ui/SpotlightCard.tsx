@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useTheme } from "@/providers/theme-provider";
+import { cn } from "@/lib/utils";
 
 interface Position {
   x: number;
@@ -9,12 +10,14 @@ interface Position {
 interface SpotlightCardProps extends React.PropsWithChildren {
   className?: string;
   spotlightColor?: `rgba(${number}, ${number}, ${number}, ${number})`;
+  variant?: 'default' | 'frosted';
 }
 
 const SpotlightCard: React.FC<SpotlightCardProps> = ({
   children,
   className = "",
-  spotlightColor
+  spotlightColor,
+  variant = 'default'
 }) => {
   const { theme } = useTheme();
   const divRef = useRef<HTMLDivElement>(null);
@@ -59,11 +62,14 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative rounded-3xl border ${
-        theme === 'dark' 
-          ? 'border-neutral-800 bg-neutral-900' 
-          : 'border-neutral-200 bg-white'
-      } overflow-hidden p-8 ${className}`}
+      className={cn(
+        "relative border overflow-hidden",
+        variant === 'frosted'
+          ? 'rounded-xl p-4 bg-card/50 backdrop-blur-xl'
+          : 'rounded-3xl p-8',
+        variant === 'default' && (theme === 'dark' ? 'border-neutral-800 bg-neutral-900' : 'border-neutral-200 bg-white'),
+        className
+      )}
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"

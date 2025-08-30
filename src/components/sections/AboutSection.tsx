@@ -8,13 +8,13 @@ export function AboutSection() {
     <section id="about" className="scroll-mt-16">
       <h2 className="text-3xl font-bold mb-8">关于我</h2>
       <div className="grid lg:grid-cols-2 gap-8">
-        <Card className="p-6 hover:shadow-lg transition-shadow">
+        <Card className="p-6 hover:shadow-md transition-all duration-300 bg-card/50 backdrop-blur-xl">
           <h3 className="text-xl font-semibold mb-4">专业背景</h3>
           <p className="text-muted-foreground">
             {aboutContent.introduction}
           </p>
         </Card>
-        <Card className="p-6 hover:shadow-lg transition-shadow">
+        <Card className="p-6 hover:shadow-md transition-all duration-300 bg-card/50 backdrop-blur-xl">
           <h3 className="text-xl font-semibold mb-4">技术专长</h3>
           <div className="space-y-4">
             {skills.map((skill) => (

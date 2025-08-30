@@ -64,7 +64,7 @@ export function HeroSection() {
                   className="group relative overflow-hidden px-8"
                 >
                   <span className="relative z-10">查看项目</span>
-                  <div className="absolute inset-0 bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                  <div className="absolute inset-0 bg-primary/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                 </Button>
               </div>
             </div>
@@ -73,15 +73,13 @@ export function HeroSection() {
           {/* 右侧头像 */}
           <div className="relative order-1 md:order-2">
             <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 animate-pulse"></div>
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/10 to-transparent"></div>
               <OptimizedImage 
                 src="/avatar1.png" 
                 alt="Jimmy" 
                 width={320}
                 height={320}
                 priority={true}
-                className="w-full h-full object-cover rounded-2xl border-4 border-background shadow-2xl"
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
               />
               {theme === 'dark' ? (
                 <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-2xl bg-primary/10 backdrop-blur-sm flex items-center justify-center border border-primary/20 shadow-lg">

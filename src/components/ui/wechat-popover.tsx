@@ -50,7 +50,7 @@ export function WechatPopover({ children }: WechatPopoverProps) {
         )}
       </PopoverTrigger>
       <PopoverContent 
-        className="w-80" 
+        className="w-80 bg-card/50 backdrop-blur-xl border-border/20" 
         side="right"
         align="center"
         sideOffset={5}
