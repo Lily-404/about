@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
-import { OptimizedImage } from '@/components/ui/optimized-image';
+
 
 interface NavbarProps {
   activeSection: string;
