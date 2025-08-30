@@ -55,8 +55,8 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems, setActiveS
           "fixed top-4 left-1/2 -translate-x-1/2 z-40 hidden md:block rounded-full",
           isScrolling 
             ? theme === 'light'
-              ? "bg-white/80 backdrop-blur-xl border border-zinc-200/50 shadow-lg"
-              : "bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/30 shadow-lg"
+              ? "bg-white/20 backdrop-blur-lg border border-zinc-200/50 shadow-lg"
+              : "bg-zinc-900/20 backdrop-blur-lg border border-zinc-800/30 shadow-lg"
             : "bg-transparent"
         )}
         style={{
@@ -69,7 +69,7 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems, setActiveS
             : 'none',
         }}
       >
-        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="container mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="relative h-9 w-9">
               <OptimizedImage
@@ -89,7 +89,7 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems, setActiveS
               />
             </div>
           </div>
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-12">
             {navItems.map(({ id, label }) => (
               <a
                 key={id}
@@ -97,7 +97,7 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems, setActiveS
                 className={cn(
                   'text-sm font-medium transition-all duration-300 relative group',
                   activeSection === id 
-                    ? 'text-zinc-900 dark:text-zinc-100 dark:drop-shadow-[0_0_8px_#e5e7eb]'
+                    ? 'text-zinc-900 dark:text-zinc-100'
                     : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
                 )}
                 onClick={(e) => {
@@ -109,10 +109,10 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems, setActiveS
                 }}
               >
                 {label}
-                <span 
+                <span
                   className={cn(
-                    "absolute -bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300",
-                    activeSection === id ? "w-4" : "w-0 group-hover:w-4"
+                    "absolute right-[-15px] top-1/2 -translate-y-1/2 h-1.5 w-1.5 rounded-full bg-red-500 transition-opacity duration-300",
+                    activeSection === id ? "opacity-100" : "opacity-0"
                   )}
                 />
               </a>
@@ -133,8 +133,8 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems, setActiveS
       <nav className={cn(
         "md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-[85%]",
         theme === 'light'
-          ? "bg-white/80 backdrop-blur-xl border border-zinc-200/50 rounded-full shadow-lg"
-          : "bg-zinc-900/40 backdrop-blur-xl border border-zinc-800/30 rounded-full shadow-lg",
+          ? "bg-white/20 backdrop-blur-xl border border-zinc-200/50 rounded-full shadow-lg"
+          : "bg-zinc-900/20 backdrop-blur-xl border border-zinc-800/30 rounded-full shadow-lg",
         "transition-all duration-700 ease-out"
       )}>
         <div className="container mx-auto px-4 h-12">
@@ -146,7 +146,7 @@ export function Navbar({ theme, toggleTheme, activeSection, navItems, setActiveS
                 className={cn(
                   'flex flex-col items-center justify-center gap-0.5 text-[10px] transition-all duration-300',
                   activeSection === id 
-                    ? 'text-zinc-900 dark:text-zinc-100 dark:drop-shadow-[0_0_8px_#e5e7eb]'
+                    ? 'text-zinc-900 dark:text-zinc-100'
                     : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
                 )}
                 onClick={(e) => {

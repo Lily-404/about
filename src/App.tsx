@@ -7,7 +7,7 @@ import { ProjectsSection } from '@/components/sections/ProjectsSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import BlogSection from '@/components/sections/BlogSection';
 import { ThemeProvider, useTheme } from '@/providers/theme-provider';
-import Squares from '@/components/ui/Squares';
+import Prism from '@/components/ui/Prism';
 import { navItems } from '@/data/navigation';
 import ReactGA from 'react-ga4';
 
@@ -33,15 +33,15 @@ function AppContent() {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
             // 记录页面浏览事件
-            ReactGA.send({ 
-              hitType: "pageview", 
+            ReactGA.send({
+              hitType: "pageview",
               page: `/${entry.target.id}`,
               title: entry.target.id.charAt(0).toUpperCase() + entry.target.id.slice(1)
             });
           }
         });
       },
-      { 
+      {
         threshold: 0.3,
         rootMargin: '-20% 0px -20% 0px'
       }
@@ -76,19 +76,26 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-background/50 text-foreground transition-colors duration-300 relative">
-      <Squares 
-        speed={0.3} 
-        squareSize={40}
-        direction='diagonal'
-        borderColor={theme === 'dark' ? '#fff' : '#000'}
-        hoverFillColor={theme === 'dark' ? '#222' : '#eee'}
-      />
-      
-      <Navbar 
-        theme={theme} 
-        toggleTheme={toggleTheme} 
-        activeSection={activeSection} 
-        navItems={navItems} 
+
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -1 }}>
+        <Prism
+          animationType="rotate"
+          timeScale={0.2}
+          height={3.5}
+          baseWidth={5.5}
+          scale={3.40}
+          hueShift={0}
+          colorFrequency={0.5}
+          noise={0}
+          glow={1}
+        />
+      </div>
+
+      <Navbar
+        theme={theme}
+        toggleTheme={toggleTheme}
+        activeSection={activeSection}
+        navItems={navItems}
         setActiveSection={setActiveSection}
       />
 
