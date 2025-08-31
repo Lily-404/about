@@ -79,7 +79,6 @@ function AppContent() {
           glow={1}
         />
       </div>
-
       <Navbar
         activeSection={activeSection}
         navItems={navItems}
