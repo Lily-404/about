@@ -20,7 +20,7 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
           width="100%"
           borderRadius={40}
           style={{ height: 'auto'}}
-          backgroundOpacity={0.05}
+          backgroundOpacity={0.1}
           blur={2.3}
           distortionScale={-50}
           displace={0}
@@ -70,7 +70,7 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
           width="100%"
           borderRadius={30}
           style={{ height: 'auto'}}
-          backgroundOpacity={0.05}
+          backgroundOpacity={0.1}
           blur={1}
           distortionScale={-50}
           displace={0.2}
