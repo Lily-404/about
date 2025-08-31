@@ -21,7 +21,7 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
           borderRadius={40}
           style={{ height: 'auto'}}
           backgroundOpacity={0.1}
-          blur={2.3}
+          blur={2.5}
           distortionScale={-50}
           displace={0}
           redOffset={5}
@@ -71,7 +71,7 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
           borderRadius={30}
           style={{ height: 'auto'}}
           backgroundOpacity={0.1}
-          blur={1}
+          blur={2.5}
           distortionScale={-50}
           displace={0.2}
           redOffset={5}
@@ -89,7 +89,7 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
                   className={cn(
                     'flex flex-col items-center justify-center gap-0.5 text-xs transition-all duration-300',
                     activeSection === id 
-                      ? 'text-zinc-100'
+                      ? 'text-zinc-50'
                       : 'text-zinc-400 hover:text-zinc-100'
                   )}
                   onClick={(e) => {
