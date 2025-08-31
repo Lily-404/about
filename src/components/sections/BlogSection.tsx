@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Tag, RefreshCw } from 'lucide-react';
 import { XMLParser } from 'fast-xml-parser';
+import ShinyText from '@/components/ui/ShinyText';
 
 interface BlogPost {
   title: string;
@@ -106,10 +107,10 @@ export default function BlogSection() {
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold mb-8 text-center">最新博客</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center"><ShinyText text="最新博客" /></h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3].map((i) => (
-            <Card key={i} className="animate-pulse">
+            <Card key={i} className="animate-pulse rounded-3xl">
               <CardHeader>
                 <div className="h-6 bg-gray-200 rounded w-3/4"></div>
                 <div className="h-4 bg-gray-200 rounded w-1/2 mt-2"></div>
@@ -127,7 +128,7 @@ export default function BlogSection() {
   if (error) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold mb-8 text-center">最新博客</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center"><ShinyText text="最新博客" /></h2>
         <div className="text-center">
           <p className="text-red-500 mb-4">{error}</p>
           <Button 
@@ -146,7 +147,7 @@ export default function BlogSection() {
   return (
     <section className="container mx-auto px-4 py-4">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-3xl font-bold">最新博客</h2>
+        <h2 className="text-3xl font-bold"><ShinyText text="最新博客" /></h2>
         <Button 
           variant="ghost" 
           size="sm"
@@ -159,9 +160,9 @@ export default function BlogSection() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post, index) => (
-          <Card key={index} className="hover:shadow-md transition-all duration-300 bg-card/50 backdrop-blur-xl">
+          <Card key={index} className="hover:shadow-md transition-all duration-300 bg-card/50 backdrop-blur-xl rounded-3xl">
             <CardHeader className="pb-2">
-              <CardTitle className="text-xl md:truncate">
+              <CardTitle className="text-xl md:truncate text-zinc-300">
                 <a 
                   href={post.link} 
                   target="_blank" 

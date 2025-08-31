@@ -8,6 +8,7 @@ import { Globe, MessageCircle, X } from 'lucide-react';
 import { OptimizedImage } from '@/components/ui/optimized-image';
 import { WechatPopover } from '@/components/ui/wechat-popover';
 import { logEvent, EventCategories, EventActions } from '@/lib/analytics';
+import ShinyText from '@/components/ui/ShinyText';
 import {
   Dialog,
   DialogContent,
@@ -36,15 +37,15 @@ export function ContactSection() {
   return (
     <section id="contact" className="scroll-mt-16 py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-4">{contactContent.title}</h2>
+        <h2 className="text-4xl font-bold mb-4"><ShinyText text={contactContent.title} /></h2>
         <p className="text-muted-foreground mb-12 max-w-2xl">
           {contactContent.description}
         </p>
         
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-8 bg-card/50 backdrop-blur-xl hover:shadow-md transition-all duration-300">
+          <Card className="p-8 bg-card/50 backdrop-blur-xl hover:shadow-md transition-all duration-300 rounded-3xl">
             <form onSubmit={handleFormSubmit} className="space-y-6">
-              <h3 className="text-2xl font-semibold">{contactContent.cards.cooperation.title}</h3>
+              <h3 className="text-2xl font-semibold text-zinc-300">{contactContent.cards.cooperation.title}</h3>
               <p className="text-muted-foreground">
                 {contactContent.cards.cooperation.description}
               </p>
@@ -81,9 +82,9 @@ export function ContactSection() {
             </form>
           </Card>
 
-          <Card className="p-8 bg-card/50 backdrop-blur-xl hover:shadow-md transition-all duration-300">
+          <Card className="p-8 bg-card/50 backdrop-blur-xl hover:shadow-md transition-all duration-300 rounded-3xl">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-semibold">友情链接</h3>
+              <h3 className="text-2xl font-semibold text-zinc-300">友情链接</h3>
               <div className="text-sm text-muted-foreground">
                 共 {friends.length} 个友链
               </div>
@@ -97,17 +98,17 @@ export function ContactSection() {
                   rel="noopener noreferrer"
                   className="group flex items-start gap-3 p-3 rounded-lg hover:bg-muted/30 transition-all duration-200"
                 >
-                  <div className="relative w-9 h-9 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                  <div className="relative w-9 h-9 rounded-sm overflow-hidden bg-muted flex-shrink-0">
                     {friend.avatar ? (
                       <OptimizedImage
                         src={friend.avatar}
                         alt={friend.name}
                         width={36}
                         height={36}
-                        className="object-cover"
+                        className="object-cover rounded-none"
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-primary/10">
+                      <div className="w-full h-full flex items-center justify-center bg-primary/10 rounded-none">
                         <Globe className="h-4 w-4 text-primary" />
                       </div>
                     )}
@@ -148,7 +149,7 @@ export function ContactSection() {
                   <DialogContent className="max-w-4xl max-h-[80vh] overflow-hidden flex flex-col [&>button]:hidden data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] duration-300 ease-out">
                     <div className="flex items-center justify-between px-6 py-3">
                       <div className="flex items-center gap-2">
-                        <h2 className="text-base font-medium">友链</h2>
+                        <h2 className="text-base font-medium text-zinc-300">友链</h2>
                         <span className="text-sm text-muted-foreground/60">
                           {friends.length}
                         </span>
@@ -172,30 +173,30 @@ export function ContactSection() {
                             href={friend.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex items-start gap-3 p-3 hover:bg-muted/30 transition-all duration-200 border-b border-r border-muted/30 animate-in fade-in-0 slide-in-from-bottom-4 duration-500 ease-out hover:translate-y-[-2px] hover:shadow-sm"
+                            className="group flex items-start gap-3 p-3 rounded-md hover:bg-muted/30 transition-all duration-200 border-b border-r border-muted/30 animate-in fade-in-0 slide-in-from-bottom-4 duration-500 ease-out hover:translate-y-[-2px] hover:shadow-sm"
                             style={{ 
                               animationDelay: `${index * 30}ms`,
                               animationFillMode: 'both'
                             }}
                           >
-                            <div className="relative w-9 h-9 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+                            <div className="relative w-9 h-9 rounded-sm overflow-hidden bg-muted flex-shrink-0">
                               {friend.avatar ? (
                                 <OptimizedImage
                                   src={friend.avatar}
                                   alt={friend.name}
                                   width={36}
                                   height={36}
-                                  className="object-cover"
+                                  className="object-cover rounded-none"
                                 />
                               ) : (
-                                <div className="w-full h-full flex items-center justify-center bg-primary/10">
+                                <div className="w-full h-full flex items-center justify-center bg-primary/10 rounded-none">
                                   <Globe className="h-4 w-4 text-primary" />
                                 </div>
                               )}
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-1">
-                                <h4 className="font-medium text-sm truncate group-hover:text-primary/80 transition-colors">
+                                <h4 className="font-medium text-sm truncate text-zinc-300 group-hover:text-primary/80 transition-colors">
                                   {friend.name}
                                 </h4>
                               </div>
