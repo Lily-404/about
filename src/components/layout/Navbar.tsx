@@ -15,14 +15,15 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
   return (
     <>
       {/* 桌面端导航 */}
-      <div className="fixed top-4 left-1/2 -translate-x-1/2 max-w-[1100px] z-40 hidden md:block">
-        <GlassSurface
+      <div className="fixed top-5 left-1/2 -translate-x-1/2 max-w-[1100px] z-40 hidden md:block">
+         <GlassSurface
           width="100%"
           borderRadius={40}
           style={{ height: 'auto'}}
-          blur={2}
-          distortionScale={-20}
-          displace={0.2}
+          backgroundOpacity={0.05}
+          blur={2.3}
+          distortionScale={-50}
+          displace={0}
           redOffset={5}
           greenOffset={15}
           blueOffset={25}
@@ -36,7 +37,7 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
                   key={id}
                   href={`#${id}`}
                   className={cn(
-                    'text-sm font-medium transition-all duration-300 relative group',
+                    'text-smd font-medium transition-all duration-300 relative group',
                     activeSection === id 
                       ? 'text-zinc-100'
                       : 'text-zinc-400 hover:text-zinc-100'
@@ -64,13 +65,13 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
       </div>
 
       {/* 移动端导航 */}
-      <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-9/12 z-40">
+      <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-11/12 z-40">
         <GlassSurface
           width="100%"
           borderRadius={30}
           style={{ height: 'auto'}}
-          backgroundOpacity={0.1}
-          blur={2}
+          backgroundOpacity={0.05}
+          blur={1}
           distortionScale={-50}
           displace={0.2}
           redOffset={5}
