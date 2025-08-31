@@ -17,7 +17,7 @@ export function HeroSection() {
                 <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                 <span className="text-sm font-medium">你好，我是</span>
               </div>
-              
+
               <div className="text-5xl sm:text-6xl lg:text-7xl font-bold">
                 <ShinyText text={heroContent.title} disabled={false} speed={3} className='custom-class' />
               </div>
@@ -40,24 +40,29 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-6 pt-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-              <div className="flex gap-4">
-                <Button 
-                  size="lg" 
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group relative overflow-hidden px-8"
-                >
-                  <span className="relative z-10">联系我</span>
-                  <div className="absolute inset-0 bg-primary/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-                </Button>
-                <Button 
-                  variant="outline" 
+              <div className="flex gap-6">
+               
+                <Button
+                  variant="outline"
                   size="lg"
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group relative overflow-hidden px-8"
+                  className="group relative overflow-hidden px-8 border-zinc-600"
                 >
                   <span className="relative z-10">查看项目</span>
-                  <div className="absolute inset-0 bg-primary/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
+
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="group relative overflow-hidden px-8 border-zinc-600"
+                >
+                  <span className="relative z-10">联系我</span>
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Button>
+
               </div>
             </div>
           </div>
@@ -65,17 +70,17 @@ export function HeroSection() {
           {/* 右侧头像 */}
           <div className="relative order-1 md:order-2">
             <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
-              <OptimizedImage 
-                src="/avatar.jpg" 
-                alt="Jimmy" 
+              <OptimizedImage
+                src="/avatar.jpg"
+                alt="Jimmy"
                 width={320}
                 height={320}
                 priority={true}
                 className="w-full h-full object-cover rounded-3xl shadow-2xl border border-primary/20"
               />
               <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-2xl bg-primary/10 backdrop-blur-sm flex items-center justify-center border border-primary/20 shadow-lg">
-                  <Code2 className="h-8 w-8 text-primary" />
-                </div>
+                <Code2 className="h-8 w-8 text-primary" />
+              </div>
             </div>
           </div>
         </div>

@@ -160,7 +160,7 @@ export default function BlogSection() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post, index) => (
-          <Card key={index} className="hover:shadow-md transition-all duration-300 bg-card/50 backdrop-blur-xl rounded-3xl">
+          <Card key={index} className="hover:shadow-md transition-all duration-300 bg-card/50 backdrop-blur-xl border-zinc-700 rounded-3xl">
             <CardHeader className="pb-2">
               <CardTitle className="text-xl md:truncate text-zinc-300">
                 <a 
@@ -192,7 +192,7 @@ export default function BlogSection() {
               )}
             </CardContent>
             <CardFooter>
-              <Button variant="outline" asChild className="w-full group">
+              <Button variant="outline" asChild className="w-full group border-zinc-800">
                 <a href={post.link} target="_blank" rel="noopener noreferrer">
                   阅读全文
                   <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

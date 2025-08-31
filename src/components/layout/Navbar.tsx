@@ -37,7 +37,7 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
                   key={id}
                   href={`#${id}`}
                   className={cn(
-                    'text-smd font-medium transition-all duration-300 relative group',
+                    'text-sm font-medium leading-none transition-all duration-300 relative group',
                     activeSection === id 
                       ? 'text-zinc-100'
                       : 'text-zinc-400 hover:text-zinc-100'

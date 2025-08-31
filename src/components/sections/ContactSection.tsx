@@ -43,7 +43,7 @@ export function ContactSection() {
         </p>
         
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-8 bg-card/50 backdrop-blur-xl hover:shadow-md transition-all duration-300 rounded-3xl">
+          <Card className="p-8 bg-card/50 backdrop-blur-xl border-zinc-700 hover:shadow-md transition-all duration-300 rounded-3xl">
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <h3 className="text-2xl font-semibold text-zinc-300">{contactContent.cards.cooperation.title}</h3>
               <p className="text-muted-foreground">
@@ -82,7 +82,7 @@ export function ContactSection() {
             </form>
           </Card>
 
-          <Card className="p-8 bg-card/50 backdrop-blur-xl hover:shadow-md transition-all duration-300 rounded-3xl">
+          <Card className="p-8 bg-card/50 border-zinc-700 backdrop-blur-xl hover:shadow-md transition-all duration-300 rounded-3xl">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold text-zinc-300">友情链接</h3>
               <div className="text-sm text-muted-foreground">
