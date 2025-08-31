@@ -50,7 +50,7 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
         className={cn(
           "fixed top-4 left-1/2 -translate-x-1/2 z-40 hidden md:block rounded-full",
           isScrolling 
-            ? "bg-zinc-900/20 backdrop-blur-lg border border-zinc-700/50 shadow-lg"
+            ? "bg-zinc-900/20 backdrop-blur-lg border border-[#363B3C]/50 shadow-lg"
             : "bg-transparent"
         )}
         style={{
@@ -96,7 +96,7 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
       {/* 移动端导航 */}
       <nav className={cn(
         "md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-40 w-[85%]",
-        "bg-zinc-900/20 backdrop-blur-xl border border-zinc-700/50 rounded-full shadow-lg",
+        "bg-zinc-900/20 backdrop-blur-xl border border-[#363B3C]/50 rounded-full shadow-lg",
         "transition-all duration-700 ease-out"
       )}>
         <div className="container mx-auto px-4 h-12">

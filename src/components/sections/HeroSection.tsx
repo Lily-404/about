@@ -66,7 +66,7 @@ export function HeroSection() {
           <div className="relative order-1 md:order-2">
             <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
               <OptimizedImage 
-                src="/avatar.png" 
+                src="/avatar.jpg" 
                 alt="Jimmy" 
                 width={320}
                 height={320}
