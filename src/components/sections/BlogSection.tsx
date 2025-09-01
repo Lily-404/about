@@ -145,7 +145,7 @@ export default function BlogSection() {
   }
 
   return (
-    <section className="container max-w-6xl mx-auto px-4">
+    <section className="container max-w-6xl mx-auto px-8">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-bold"><ShinyText text="最新博客" /></h2>
         <Button 

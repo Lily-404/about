@@ -7,7 +7,7 @@ import ShinyText from '@/components/ui/ShinyText';
 export function AboutSection() {
   return (
     <section id="about" className="scroll-mt-16">
-      <div className="container max-w-6xl mx-auto px-4">
+      <div className="container max-w-6xl mx-auto px-8">
         <h2 className="text-3xl font-bold mb-8">
           <ShinyText text="关于我" />
         </h2>
