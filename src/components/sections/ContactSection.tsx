@@ -35,8 +35,8 @@ export function ContactSection() {
   const displayedFriends = friends.slice(0, 5);
 
   return (
-    <section id="contact" className="scroll-mt-16 py-16">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="scroll-mt-16">
+      <div className="container max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold mb-4"><ShinyText text={contactContent.title} /></h2>
         <p className="text-muted-foreground mb-12 max-w-2xl">
           {contactContent.description}

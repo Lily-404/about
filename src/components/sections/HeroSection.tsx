@@ -9,7 +9,7 @@ import { OptimizedImage } from '@/components/ui/optimized-image';
 export function HeroSection() {
   return (
     <section id="home" className="min-h-[90vh] flex items-center relative">
-      <div className="container mx-auto px-4">
+      <div className="container max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 order-2 md:order-1">
             <div className="space-y-4">

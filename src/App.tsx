@@ -85,7 +85,7 @@ function AppContent() {
         setActiveSection={setActiveSection}
       />
 
-      <main ref={mainRef} className="container max-w-6xl mx-auto px-4 pt-8 md:pt-24 pb-8 md:pb-4 space-y-16 md:space-y-24 relative z-10">
+      <main ref={mainRef} className="pt-8 md:pt-24 pb-8 md:pb-4 space-y-16 md:space-y-24 relative z-10">
         <div className="relative min-h-[80vh] w-full">
           <HeroSection />
         </div>
