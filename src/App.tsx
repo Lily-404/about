@@ -8,7 +8,10 @@ import { ContactSection } from '@/components/sections/ContactSection';
 import BlogSection from '@/components/sections/BlogSection';
 import { ThemeProvider } from '@/providers/theme-provider';
 import Prism from '@/components/ui/Prism';
+import Plasma from '@/components/ui/Plasma';
 import { navItems } from '@/data/navigation';
+import Iridescence from '@/components/ui/Iridescence';
+import PrismaticBurst from '@/components/ui/PrismaticBurst';
 import ReactGA from 'react-ga4';
 
 function AppContent() {
@@ -67,7 +70,7 @@ function AppContent() {
     <div className="min-h-screen bg-background/50 text-foreground transition-colors duration-300 relative">
 
       <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -1 }}>
-        <Prism
+        {/* <Prism
           animationType="rotate"
           timeScale={0.2}
           height={3.5}
@@ -77,8 +80,43 @@ function AppContent() {
           colorFrequency={0.5}
           noise={0}
           glow={1}
+        /> */}
+
+
+        {/* <Iridescence
+          color={[1, 1, 1]}
+          mouseReact={false}
+          amplitude={0.1}
+          speed={1.0}
+        /> */}
+
+        {/* <Plasma
+          color="#73537F"
+          speed={1}
+          direction="forward"
+          scale={1}
+          opacity={1}
+          mouseInteractive={true}
+        /> */}
+
+
+        <PrismaticBurst
+          animationType="rotate3d"
+          intensity={2}
+          speed={0.5}
+          distort={1.8}
+          paused={false}
+          offset={{ x: 0, y: 0 }}
+          hoverDampness={0.25}
+          rayCount={0}
+          mixBlendMode="lighten"
+          colors={['#4F1FB2', '#605A3E', '#5A8F2C']}
         />
+
+
       </div>
+
+
       <Navbar
         activeSection={activeSection}
         navItems={navItems}
