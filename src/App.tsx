@@ -7,10 +7,10 @@ import { ProjectsSection } from '@/components/sections/ProjectsSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import BlogSection from '@/components/sections/BlogSection';
 import { ThemeProvider } from '@/providers/theme-provider';
-import Prism from '@/components/ui/Prism';
-import Plasma from '@/components/ui/Plasma';
+// import Prism from '@/components/ui/Prism';
+// import Plasma from '@/components/ui/Plasma';
 import { navItems } from '@/data/navigation';
-import Iridescence from '@/components/ui/Iridescence';
+// import Iridescence from '@/components/ui/Iridescence';
 import PrismaticBurst from '@/components/ui/PrismaticBurst';
 import ReactGA from 'react-ga4';
 
