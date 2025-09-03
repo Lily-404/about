@@ -45,8 +45,8 @@ export interface GlassSurfaceProps {
 const GlassSurface: React.FC<GlassSurfaceProps> = ({
   children,
   width = 200,
-  height = 60,
-  borderRadius = 20,
+  height = 70,
+  borderRadius = 30,
   borderWidth = 0.07,
   brightness = 50,
   opacity = 0.93,
