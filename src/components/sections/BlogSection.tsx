@@ -106,22 +106,39 @@ export default function BlogSection() {
 
   if (loading) {
     return (
-      <div className="container mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold mb-8 text-center"><ShinyText text="最新博客" /></h2>
+      <section className="container max-w-6xl mx-auto px-8">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-3xl font-bold"><ShinyText text="最新博客" /></h2>
+          <div className="animate-pulse bg-zinc-700 rounded-md h-9 w-24" />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3].map((i) => (
-            <Card key={i} className="animate-pulse rounded-3xl">
-              <CardHeader>
-                <div className="h-6 bg-gray-200 rounded w-3/4"></div>
-                <div className="h-4 bg-gray-200 rounded w-1/2 mt-2"></div>
+            <Card key={i} className="animate-pulse rounded-3xl bg-card/50 backdrop-blur-xl border-zinc-700">
+              <CardHeader className="pb-2">
+                <div className="h-6 rounded bg-zinc-700 w-3/4"></div>
+                <div className="h-4 rounded bg-zinc-700 w-1/2 mt-2"></div>
               </CardHeader>
-              <CardContent>
-                <div className="h-24 bg-gray-200 rounded"></div>
+              <CardContent className="pb-4">
+                <div className="space-y-2">
+                  <div className="h-4 rounded bg-zinc-700"></div>
+                  <div className="h-4 rounded bg-zinc-700"></div>
+                  <div className="h-4 rounded bg-zinc-700 w-5/6"></div>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  <div className="h-6 w-16 rounded-md bg-zinc-700"></div>
+                  <div className="h-6 w-20 rounded-md bg-zinc-700"></div>
+                </div>
               </CardContent>
+              <CardFooter>
+                <div className="h-10 w-full rounded-md bg-zinc-700"></div>
+              </CardFooter>
             </Card>
           ))}
         </div>
-      </div>
+        <div className="mt-6 text-center">
+          <div className="h-12 w-48 animate-pulse rounded-md bg-zinc-700 mx-auto" />
+        </div>
+      </section>
     );
   }
 
