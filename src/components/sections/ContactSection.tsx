@@ -41,7 +41,7 @@ export function ContactSection() {
         <p className="text-muted-foreground mb-12 max-w-2xl">
           {contactContent.description}
         </p>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           <Card className="p-8 bg-card/50 backdrop-blur-xl border-zinc-700 hover:shadow-md transition-all duration-300 rounded-3xl">
             <form onSubmit={handleFormSubmit} className="space-y-6">
@@ -123,9 +123,18 @@ export function ContactSection() {
                       <p className="text-xs text-muted-foreground/60 line-clamp-1 mt-1">
                         {friend.description}
                       </p>
-                      <div className="absolute left-0 top-full mt-1 p-2 bg-background text-foreground text-xs rounded-md shadow-lg border border-border opacity-0 invisible group-hover/desc:opacity-100 group-hover/desc:visible transition-all duration-200 z-50 max-w-[200px]">
+                      <div className="
+                        absolute left-0 top-full mt-1 p-2 
+                        bg-background text-foreground text-xs rounded-md shadow-lg border border-border 
+                        opacity-0 invisible group-hover/desc:opacity-100 group-hover/desc:visible 
+                        transition-all duration-200 z-50 
+                        hidden md:block
+                        w-max max-w-[240px] lg:max-w-[480px]
+                      ">
                         {friend.description}
                       </div>
+
+
                     </div>
                   </div>
                 </a>
@@ -174,7 +183,7 @@ export function ContactSection() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex items-start gap-3 p-3 rounded-md hover:bg-muted/30 transition-all duration-200 border-b border-r border-muted/30 animate-in fade-in-0 slide-in-from-bottom-4 duration-500 ease-out hover:translate-y-[-2px] hover:shadow-sm"
-                            style={{ 
+                            style={{
                               animationDelay: `${index * 30}ms`,
                               animationFillMode: 'both'
                             }}

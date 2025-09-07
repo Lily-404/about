@@ -31,7 +31,12 @@ export const friends: Friend[] = [
     description: "后端工程师，写有趣的代码，做有趣的事",
     avatar: "/friend3.jpg"
   },
-  
+  {
+    name: "keepchen",
+    url: "https://blog.keepchen.com/",
+    description: "如果条件允许，想养只柯基。",
+    avatar: "/friend5.png"
+  },
 
 
 ]; 
