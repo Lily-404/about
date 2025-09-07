@@ -37,6 +37,28 @@ export const friends: Friend[] = [
     description: "如果条件允许，想养只柯基。",
     avatar: "/friend5.png"
   },
+  {
+    name: "keepchen",
+    url: "https://blog.keepchen.com/",
+    description: "如果条件允许，想养只柯基。",
+    avatar: "/friend5.png"
+  },
+
+  {
+    name: "keepchen",
+    url: "https://blog.keepchen.com/",
+    description: "如果条件允许，想养只柯基。",
+    avatar: "/friend5.png"
+  },
+
+  {
+    name: "keepchen",
+    url: "https://blog.keepchen.com/",
+    description: "如果条件允许，想养只柯基。",
+    avatar: "/friend5.png"
+  },
+
+
 
 
 ]; 
