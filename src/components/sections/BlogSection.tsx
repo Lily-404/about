@@ -200,8 +200,7 @@ export default function BlogSection() {
               {post.categories && post.categories.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {post.categories.map((category, idx) => (
-                    <span key={idx} className="border border-input bg-card/60 px-2 py-1 rounded-md text-xs hover:bg-white/10 hover:text-accent-foreground transition-colors duration-300 flex items-center gap-1">
-                      <Tag className="h-3 w-3" />
+                    <span key={idx} className="border border-input bg-card/60 px-2 py-1 rounded-md text-xs hover:bg-white/10 hover:text-accent-foreground transition-colors duration-300">
                       {category}
                     </span>
                   ))}
@@ -212,7 +211,6 @@ export default function BlogSection() {
               <Button variant="outline" asChild className="w-full group border-zinc-800">
                 <a href={post.link} target="_blank" rel="noopener noreferrer">
                   阅读全文
-                  <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </CardFooter>
@@ -223,7 +221,7 @@ export default function BlogSection() {
         <Button 
           variant="outline" 
           size="lg"
-          className="gap-2 group"
+          className="gap-1 group rounded-full border-zinc-700"
           asChild
         >
           <a 
@@ -231,8 +229,8 @@ export default function BlogSection() {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            查看更多文章
-            <ExternalLink className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            更多博客
+            <ExternalLink className="h-4 w-4 " />
           </a>
         </Button>
       </div>
