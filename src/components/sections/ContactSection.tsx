@@ -49,7 +49,7 @@ export function ContactSection() {
               <p className="text-muted-foreground">
                 {contactContent.cards.cooperation.description}
               </p>
-              <Separator />
+              <Separator className="bg-zinc-800" />
               <div className="space-y-6">
                 <div className="flex flex-wrap gap-4">
                   <WechatPopover>
@@ -69,7 +69,7 @@ export function ContactSection() {
                         key={link.label}
                         variant="outline"
                         size="icon"
-                        className="hover:scale-110 transition-transform hover:bg-primary hover:text-primary-foreground"
+                        className=" transition-transform hover:bg-primary hover:text-primary-foreground"
                         aria-label={link.label}
                         onClick={() => handleSocialClick(link.label, link.href)}
                       >

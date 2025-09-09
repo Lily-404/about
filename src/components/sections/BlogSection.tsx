@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Tag, RefreshCw } from 'lucide-react';
+import { ExternalLink, RefreshCw } from 'lucide-react';
 import { XMLParser } from 'fast-xml-parser';
 import ShinyText from '@/components/ui/ShinyText';
 
@@ -200,7 +200,7 @@ export default function BlogSection() {
               {post.categories && post.categories.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {post.categories.map((category, idx) => (
-                    <span key={idx} className="border border-input bg-card/60 px-2 py-1 rounded-md text-xs hover:bg-white/10 hover:text-accent-foreground transition-colors duration-300">
+                    <span key={idx} className="border border-input bg-card/60 px-2 py-1 rounded-lg text-xs hover:bg-white/10 hover:text-accent-foreground transition-colors duration-300">
                       {category}
                     </span>
                   ))}
@@ -208,7 +208,7 @@ export default function BlogSection() {
               )}
             </CardContent>
             <CardFooter>
-              <Button variant="outline" asChild className="w-full group border-zinc-800">
+              <Button variant="outline" asChild className="w-full group border-zinc-800 rounded-full">
                 <a href={post.link} target="_blank" rel="noopener noreferrer">
                   阅读全文
                 </a>
