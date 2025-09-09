@@ -49,7 +49,7 @@ export function ContactSection() {
               <p className="text-muted-foreground">
                 {contactContent.cards.cooperation.description}
               </p>
-              <Separator className="bg-zinc-800" />
+              <Separator className="bg-zinc-600" />
               <div className="space-y-6">
                 <div className="flex flex-wrap gap-4">
                   <WechatPopover>

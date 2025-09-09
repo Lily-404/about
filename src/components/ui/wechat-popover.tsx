@@ -50,12 +50,12 @@ export function WechatPopover({ children }: WechatPopoverProps) {
         )}
       </PopoverTrigger>
       <PopoverContent 
-        className="w-80 bg-card/50 backdrop-blur-xl border-border/20" 
+        className="w-80 bg-card/50 backdrop-blur-xl border-border/20 rounded-2xl" 
         side="right"
         align="center"
         sideOffset={5}
       >
-        <div className="space-y-4">
+        <div className="space-y-4 pt-4">
           <div className="flex justify-center">
             <OptimizedImage
               src="/wechat-qr.jpg"
