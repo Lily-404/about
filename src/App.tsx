@@ -16,25 +16,23 @@ import ReactGA from 'react-ga4';
 
 function AppContent() {
   const [activeSection, setActiveSection] = useState('home');
+  const [isScrolling, setIsScrolling] = useState(false);
   const mainRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // 初始化 Google Analytics
     const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID;
     if (gaId) {
       ReactGA.initialize(gaId);
-      // 发送页面浏览事件
       ReactGA.send({ hitType: "pageview", page: window.location.pathname });
     }
 
-    // 使用 IntersectionObserver 来检测当前活动部分
     const sections = ['home', 'about', 'projects', 'blog', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
+        if (isScrolling) return;
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
-            // 记录页面浏览事件
             ReactGA.send({
               hitType: "pageview",
               page: `/${entry.target.id}`,
@@ -44,8 +42,8 @@ function AppContent() {
         });
       },
       {
-        threshold: 0.3,
-        rootMargin: '-20% 0px -20% 0px'
+        threshold: 0.2,
+        rootMargin: '-10% 0px -10% 0px'
       }
     );
 
@@ -66,6 +64,14 @@ function AppContent() {
     };
   }, []);
 
+  const handleSetActiveSection = (id: string) => {
+    setActiveSection(id);
+    setIsScrolling(true);
+    setTimeout(() => {
+      setIsScrolling(false);
+    }, 1000); // 1秒后解除锁定，可以根据滚动动画时间调整
+  };
+
   return (
     <div className="min-h-screen bg-background/50 text-foreground transition-colors duration-300 relative">
       <div style={{ width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
@@ -83,15 +89,11 @@ function AppContent() {
         />
       </div>
       <div className="animated-background"></div>
-      
-
-      
-
 
       <Navbar
         activeSection={activeSection}
         navItems={navItems}
-        setActiveSection={setActiveSection}
+        setActiveSection={handleSetActiveSection}
       />
 
       <main ref={mainRef} className="pt-8 md:pt-24 pb-8 md:pb-4 space-y-16 md:space-y-24 relative z-10">

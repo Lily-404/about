@@ -8,7 +8,7 @@ interface NavbarProps {
     label: string;
     icon: React.ComponentType<{ className?: string }>;
   }>;
-  setActiveSection: React.Dispatch<React.SetStateAction<string>>;
+  setActiveSection: (id: string) => void;
 }
 
 export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProps) {
@@ -44,7 +44,8 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
                   )}
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById(id)?.scrollIntoView({ 
+                    setActiveSection(id);
+                    document.getElementById(id)?.scrollIntoView({
                       behavior: 'smooth',
                       block: 'start'
                     });
