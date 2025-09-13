@@ -113,7 +113,7 @@ export default function BlogSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3].map((i) => (
-            <Card key={i} className="animate-pulse rounded-3xl bg-card/50 backdrop-blur-xl border-zinc-700">
+            <Card key={i} className="animate-pulse rounded-3xl bg-card/50 backdrop-blur-xl border-zinc-600">
               <CardHeader className="pb-2">
                 <div className="h-6 rounded bg-zinc-700 w-3/4"></div>
                 <div className="h-4 rounded bg-zinc-700 w-1/2 mt-2"></div>
@@ -177,7 +177,7 @@ export default function BlogSection() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post, index) => (
-          <Card key={index} className="hover:shadow-md transition-all duration-300 bg-card/50 backdrop-blur-xl border-zinc-700 rounded-3xl">
+          <Card key={index} className="hover:shadow-md transition-all duration-300 bg-card/50 backdrop-blur-xl border-zinc-600 rounded-3xl">
             <CardHeader className="pb-2">
               <CardTitle className="text-xl md:truncate text-zinc-300">
                 <a 
@@ -200,7 +200,7 @@ export default function BlogSection() {
               {post.categories && post.categories.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {post.categories.map((category, idx) => (
-                    <span key={idx} className="border border-input bg-card/60 px-2 py-1 rounded-lg text-xs hover:bg-white/10 hover:text-accent-foreground transition-colors duration-300">
+                    <span key={idx} className="border border-zinc-600 bg-transparent px-3 py-1 rounded-full text-xs text-foreground hover:bg-zinc-600 hover:text-white transition-colors duration-300">
                       {category}
                     </span>
                   ))}
@@ -208,7 +208,7 @@ export default function BlogSection() {
               )}
             </CardContent>
             <CardFooter>
-              <Button variant="outline" asChild className="w-full group border-zinc-800 rounded-full">
+              <Button variant="outline" asChild className="w-full group border-zinc-600 rounded-full">
                 <a href={post.link} target="_blank" rel="noopener noreferrer">
                   阅读全文
                 </a>
@@ -221,7 +221,7 @@ export default function BlogSection() {
         <Button 
           variant="outline" 
           size="lg"
-          className="gap-1 group rounded-full border-zinc-700"
+          className="gap-1 group rounded-full border-zinc-600"
           asChild
         >
           <a 

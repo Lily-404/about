@@ -48,7 +48,7 @@ export function HeroSection() {
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                   className="group relative overflow-hidden px-8 border-zinc-600"
                 >
-                  <span className="relative z-10">查看项目</span>
+                  <span className="relative z-10">查看作品</span>
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
 

@@ -43,7 +43,7 @@ export function ContactSection() {
         </p>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="p-8 bg-card/50 backdrop-blur-xl border-zinc-700 hover:shadow-md transition-all duration-300 rounded-3xl">
+          <Card className="p-8 bg-card/50 backdrop-blur-xl border-zinc-600 hover:shadow-md transition-all duration-300 rounded-3xl">
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <h3 className="text-2xl font-semibold text-zinc-300">{contactContent.cards.cooperation.title}</h3>
               <p className="text-muted-foreground">
@@ -56,7 +56,7 @@ export function ContactSection() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="hover:scale-110 transition-transform hover:bg-primary hover:text-primary-foreground"
+                      className="hover:scale-110 border-zinc-600 transition-transform hover:bg-primary hover:text-primary-foreground"
                       aria-label="WeChat"
                     >
                       <MessageCircle className="h-5 w-5" />
@@ -69,7 +69,7 @@ export function ContactSection() {
                         key={link.label}
                         variant="outline"
                         size="icon"
-                        className=" transition-transform hover:bg-primary hover:text-primary-foreground"
+                        className="border-zinc-600 transition-transform hover:bg-primary hover:text-primary-foreground"
                         aria-label={link.label}
                         onClick={() => handleSocialClick(link.label, link.href)}
                       >
@@ -82,7 +82,7 @@ export function ContactSection() {
             </form>
           </Card>
 
-          <Card className="p-8 bg-card/50 border-zinc-700 backdrop-blur-xl hover:shadow-md transition-all duration-300 rounded-3xl">
+          <Card className="p-8 bg-card/50 border-zinc-600 backdrop-blur-xl hover:shadow-md transition-all duration-300 rounded-3xl">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold text-zinc-300">友情链接</h3>
               <div className="text-sm text-muted-foreground">
@@ -143,7 +143,7 @@ export function ContactSection() {
                 <Dialog>
                   <DialogTrigger asChild>
                     <a
-                      className="group flex items-center justify-center gap-2 p-3 rounded-lg hover:bg-muted/30 transition-colors duration-200 border border-muted-foreground/10 hover:border-muted-foreground/20"
+                      className="group flex items-center justify-center gap-2 p-3 rounded-full hover:bg-muted/30 transition-colors duration-200 border border-zinc-600 hover:border-zinc-600"
                     >
                       <div className="flex flex-col items-center gap-1.5">
                         <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">

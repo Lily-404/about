@@ -12,13 +12,13 @@ export function AboutSection() {
           <ShinyText text="关于我" />
         </h2>
         <div className="grid lg:grid-cols-2 gap-8">
-          <Card className="p-6 hover:shadow-md transition-all border-zinc-700 duration-300 bg-card/50 backdrop-blur-xl rounded-3xl">
+          <Card className="p-6 hover:shadow-md transition-all border-zinc-600 duration-300 bg-card/50 backdrop-blur-xl rounded-3xl">
             <h3 className="text-xl font-semibold mb-4 text-zinc-300">专业背景</h3>
             <p className="text-muted-foreground">
               {aboutContent.introduction}
             </p>
           </Card>
-          <Card className="p-6 hover:shadow-md transition-all duration-300 border-zinc-700 bg-card/50 backdrop-blur-xl rounded-3xl">
+          <Card className="p-6 hover:shadow-md transition-all duration-300 border-zinc-600 bg-card/50 backdrop-blur-xl rounded-3xl">
             <h3 className="text-xl font-semibold mb-4 text-zinc-300">技术专长</h3>
             <div className="space-y-4">
               {skills.map((skill) => (

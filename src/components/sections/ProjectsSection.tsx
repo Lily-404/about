@@ -30,7 +30,7 @@ export function ProjectsSection() {
               className="block p-0 h-auto hover:bg-transparent w-full"
               onClick={() => handleProjectClick(project.title, project.link)}
             >
-              <SpotlightCard variant="frosted" className="group h-full w-full border-zinc-700">
+              <SpotlightCard variant="frosted" className="group h-full w-full border-zinc-600">
                 <div className="aspect-video relative overflow-hidden rounded-md mb-4 bg-gradient-to-br from-background/50 to-background/80 shadow-lg ring-1 ring-border/20 hover:ring-primary/30 transition-all duration-300">
                   <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
                   <OptimizedImage
