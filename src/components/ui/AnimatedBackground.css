@@ -1,0 +1,24 @@
+
+.animated-background {
+  background: linear-gradient(45deg, #fde7b4, #f8d5c7, #f0c3d1, #e8b2da, #d9a0e2);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2; /* Set a lower z-index to be behind LightRays */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

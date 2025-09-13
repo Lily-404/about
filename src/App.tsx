@@ -7,7 +7,10 @@ import { ProjectsSection } from '@/components/sections/ProjectsSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import BlogSection from '@/components/sections/BlogSection';
 import { ThemeProvider } from '@/providers/theme-provider';
-import Prism from '@/components/ui/Prism';
+import LightRays from '@/components/ui/LightRays';
+import '@/components/ui/AnimatedBackground.css';
+
+
 import { navItems } from '@/data/navigation';
 import ReactGA from 'react-ga4';
 
@@ -65,20 +68,24 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-background/50 text-foreground transition-colors duration-300 relative">
-
-      <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -1 }}>
-        <Prism
-          animationType="rotate"
-          timeScale={0.2}
-          height={3.5}
-          baseWidth={5.5}
-          scale={3.40}
-          hueShift={0}
-          colorFrequency={0.5}
-          noise={0}
-          glow={1}
+      <div style={{ width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#00ffff"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
         />
       </div>
+      <div className="animated-background"></div>
+      
+
+      
 
 
       <Navbar
