@@ -200,7 +200,7 @@ export default function BlogSection() {
               {post.categories && post.categories.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {post.categories.map((category, idx) => (
-                    <span key={idx} className="border border-zinc-600 bg-transparent px-3 py-1 rounded-full text-xs text-foreground hover:bg-zinc-600 hover:text-white transition-colors duration-300">
+                    <span key={idx} className="border border-zinc-600 bg-zinc-700 px-3 py-1 rounded-full text-xs text-foreground hover:bg-zinc-800 hover:text-white transition-colors duration-300">
                       {category}
                     </span>
                   ))}
