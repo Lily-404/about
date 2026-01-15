@@ -88,7 +88,7 @@ function AppContent() {
           className="custom-rays"
         />
       </div>
-      <div className="animated-background"></div>
+    
 
       <Navbar
         activeSection={activeSection}

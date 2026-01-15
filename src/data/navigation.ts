@@ -10,6 +10,6 @@ export const navItems: NavItem[] = [
   { id: 'home', label: '首页', icon: Globe },
   { id: 'about', label: '关于', icon: Code2 },
   { id: 'projects', label: '作品', icon: Award },
-  { id: 'blog', label: '文章', icon: BookOpen },
+  { id: 'blog', label: '博客', icon: BookOpen },
   { id: 'contact', label: '联系', icon: MessageSquare },
 ]; 
