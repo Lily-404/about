@@ -218,21 +218,15 @@ export default function BlogSection() {
         ))}
       </div>
       <div className="mt-6 text-center">
-        <Button 
-          variant="outline" 
-          size="lg"
-          className="gap-1 group rounded-full border-zinc-600"
-          asChild
+        <a 
+          href="https://www.jimmy-blog.top/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 text-primary/90 hover:from-primary/20 hover:via-primary/10 hover:to-primary/20 hover:border-primary/30 hover:text-primary transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 backdrop-blur-sm group"
         >
-          <a 
-            href="https://www.jimmy-blog.top/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            更多博客
-            <ExternalLink className="h-4 w-4 " />
-          </a>
-        </Button>
+          <span>更多博客</span>
+          <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </a>
       </div>
     </section>
   );

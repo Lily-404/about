@@ -1,10 +1,10 @@
 export const contactContent = {
   title: '联系方式',
-  description: '无论您是想讨论项目合作、技术咨询，还是单纯想交流技术话题，都欢迎随时联系我。',
+  description: '想一起搞事情？来聊聊吧～ 项目、咨询、技术闲聊都OK！',
   cards: {
     cooperation: {
-      title: '让我们开始合作',
-      description: '我很乐意听取新项目和机会的建议。无论是全职机会、自由职业项目还是技术咨询，都欢迎与我联系。'
+      title: '很期待跟你一起做点什么！',
+      description: '目前对各种合作都持开放态度：全职机会、freelance 项目、设计交流、短期攻坚……有想法的话随时戳我～'
     },
     social: {
       title: '社交媒体',
