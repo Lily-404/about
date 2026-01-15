@@ -49,7 +49,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
         "relative border overflow-hidden",
         variant === 'frosted'
           ? 'rounded-3xl p-4 bg-card/50 backdrop-blur-xl'
-          : 'rounded-3xl p-8 border-neutral-800 bg-neutral-900',
+          : 'rounded-3xl p-8 border-neutral-800 bg-neutral-800',
         className
       )}
     >
