@@ -35,14 +35,14 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
   }, []);
 
   // 毛玻璃效果的样式类
-  const glassStyle = "bg-card/50 backdrop-blur-xl border border-zinc-600/50 shadow-lg";
+  const glassStyle = "bg-card/20 backdrop-blur-xl border border-zinc-600/50 shadow-lg";
 
   return (
     <>
       {/* 桌面端导航 */}
       <div className="fixed top-5 left-1/2 -translate-x-1/2 max-w-[1100px] z-40 hidden md:block">
         {useFallback ? (
-          <div className={cn("rounded-[40px] mx-auto px-8 h-12 flex items-center justify-center", glassStyle)}>
+          <div className={cn("rounded-[40px] mx-auto px-8 h-16 flex items-center justify-center", glassStyle)}>
             <div className="flex items-center space-x-16">
               {navItems.map(({ id, label }) => (
                 <a
@@ -128,7 +128,7 @@ export function Navbar({ activeSection, navItems, setActiveSection }: NavbarProp
       {/* 移动端导航 */}
       <div className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-11/12 z-40">
         {useFallback ? (
-          <div className={cn("rounded-[30px] container mx-auto px-4 h-12", glassStyle)}>
+          <div className={cn("rounded-[30px] container mx-auto px-4 h-16", glassStyle)}>
             <div className="flex items-center justify-around h-full">
               {navItems.map(({ id, label, icon: Icon }) => (
                 <a

@@ -1,6 +1,5 @@
 // TEST COMMENT
 import { ChevronDown, Code2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import ShinyText from '@/components/ui/ShinyText';
 import { techTags } from '@/data/tech-tags';
 import { heroContent } from '@/data/hero';
@@ -33,37 +32,10 @@ export function HeroSection() {
 
             <div className="flex flex-wrap gap-3 pt-2 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400">
               {techTags.map((tag) => (
-                <span key={tag} className="px-4 py-2 text-sm rounded-full bg-primary/10 text-primary border border-primary/20">
+                <span key={tag} className="px-4 py-2 text-sm rounded-full bg-primary/10 text-primary/70 border border-primary/20">
                   {tag}
                 </span>
               ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-6 pt-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-              <div className="flex gap-6">
-               
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group relative overflow-hidden px-8 border-zinc-600"
-                >
-                  <span className="relative z-10">查看作品</span>
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </Button>
-
-
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group relative overflow-hidden px-8 border-zinc-600"
-                >
-                  <span className="relative z-10">联系我</span>
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </Button>
-
-              </div>
             </div>
           </div>
 
@@ -76,7 +48,7 @@ export function HeroSection() {
                 width={320}
                 height={320}
                 priority={true}
-                className="w-full h-full object-cover rounded-3xl shadow-2xl border border-primary/20"
+                className="w-full h-full object-cover rounded-3xl shadow-2xl border border-primary/10"
               />
               <div className="absolute -bottom-4 -right-4 w-16 h-16 rounded-2xl bg-primary/10 backdrop-blur-sm flex items-center justify-center border border-primary/20 shadow-lg">
                 <Code2 className="h-8 w-8 text-primary" />
