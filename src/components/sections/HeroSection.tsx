@@ -1,5 +1,5 @@
 // TEST COMMENT
-import { ChevronDown, Code2 } from 'lucide-react';
+import { Code2 } from 'lucide-react';
 import ShinyText from '@/components/ui/ShinyText';
 import { techTags } from '@/data/tech-tags';
 import { heroContent } from '@/data/hero';
@@ -57,10 +57,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-{/* 
-      <div className="absolute -bottom-8 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ChevronDown className="h-6 w-6 text-muted-foreground" />
-      </div> */}
     </section>
   );
 }
