@@ -52,7 +52,7 @@ export function ProjectsSection() {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-secondary px-2 py-1 rounded-md text-xs hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                        className="bg-primary/10 text-primary/70 border border-primary/20 px-2 py-1 rounded-md text-xs hover:bg-primary/20 hover:text-primary/90 hover:border-primary/30 transition-colors duration-300"
                       >
                         {tech}
                       </span>

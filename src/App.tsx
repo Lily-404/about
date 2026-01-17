@@ -73,18 +73,19 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen bg-background/50 text-foreground transition-colors duration-300 relative">
+    <div className="min-h-screen text-foreground transition-colors duration-300 relative">
       <div style={{ width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: -1 }}>
         <LightRays
           raysOrigin="top-center"
           raysColor="#00ffff"
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
+          raysSpeed={0.5}
+          lightSpread={0.7}
+          rayLength={1.7}
+          fadeDistance={1.5}
           followMouse={true}
-          mouseInfluence={0.1}
+          mouseInfluence={0.2}
           noiseAmount={0.1}
-          distortion={0.05}
+          distortion={0}
           className="custom-rays"
         />
       </div>
